@@ -1,0 +1,1232 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Collins辞書が2025年「Word of the Year」にバイブコーディングを選出。AIがコードを生成する新しい開発手法が世界で注目される理由と、エンジニアリングの未来について詳しく解説します。">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="バイブコーディングが2025年「Word of the Year」に選出｜なぜ世界が注目するのか">
+  <meta property="og:description" content="Collins辞書が2025年「Word of the Year」にバイブコーディングを選出。AIがコードを生成する新しい開発手法が世界で注目される理由と、エンジニアリングの未来について詳しく解説します。">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="バイブコーディングが2025年「Word of the Year」に選出｜なぜ世界が注目するのか">
+  <meta name="twitter:description" content="Collins辞書が2025年「Word of the Year」にバイブコーディングを選出。AIがコードを生成する新しい開発手法が世界で注目される理由と、エンジニアリングの未来について詳しく解説します。">
+  <title>バイブコーディングが2025年「Word of the Year」に選出｜なぜ世界が注目するのか</title>
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --text: #1e293b;
+      --text-light: #64748b;
+      --bg: #ffffff;
+      --bg-alt: #f8fafc;
+      --border: #e2e8f0;
+      --success: #10b981;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+      font-size: 16px;
+      line-height: 1.8;
+      color: var(--text);
+      background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%);
+      color: white;
+      padding: 60px 0 80px;
+      margin-bottom: -40px;
+    }
+
+    header .container {
+      text-align: center;
+    }
+
+    .site-name {
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      opacity: 0.9;
+      margin-bottom: 20px;
+    }
+
+    header h1 {
+      font-size: clamp(24px, 5vw, 36px);
+      font-weight: 700;
+      line-height: 1.4;
+      letter-spacing: -0.5px;
+    }
+
+    .meta {
+      margin-top: 20px;
+      font-size: 14px;
+      opacity: 0.85;
+    }
+
+    /* Article */
+    article {
+      background: var(--bg);
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      padding: 50px;
+      margin-bottom: 40px;
+    }
+
+    @media (max-width: 640px) {
+      article {
+        padding: 30px 20px;
+        border-radius: 0;
+        margin: 0 -20px 40px;
+      }
+    }
+
+    article h2 {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--text);
+      margin: 50px 0 20px;
+      padding-bottom: 12px;
+      border-bottom: 3px solid var(--primary);
+      letter-spacing: -0.3px;
+    }
+
+    article h2:first-child {
+      margin-top: 0;
+    }
+
+    article h3 {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--text);
+      margin: 35px 0 15px;
+      padding-left: 15px;
+      border-left: 4px solid var(--primary);
+    }
+
+    article p {
+      margin: 20px 0;
+      text-align: justify;
+    }
+
+    article ul, article ol {
+      margin: 20px 0;
+      padding-left: 25px;
+    }
+
+    article li {
+      margin: 10px 0;
+    }
+
+    article strong {
+      color: var(--primary-dark);
+      font-weight: 600;
+    }
+
+    article a {
+      color: var(--primary);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+
+    article a:hover {
+      border-bottom-color: var(--primary);
+    }
+
+    /* Blockquote */
+    article blockquote {
+      background: var(--bg-alt);
+      border-left: 4px solid var(--primary);
+      padding: 20px 25px;
+      margin: 25px 0;
+      border-radius: 0 8px 8px 0;
+    }
+
+    /* Table */
+    article table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 25px 0;
+      font-size: 15px;
+    }
+
+    article th, article td {
+      padding: 12px 15px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+
+    article th {
+      background: var(--bg-alt);
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    article tr:hover {
+      background: var(--bg-alt);
+    }
+
+    /* Code */
+    article code {
+      background: var(--bg-alt);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: 'SF Mono', Consolas, monospace;
+      font-size: 14px;
+    }
+
+    article pre {
+      background: #1e293b;
+      color: #e2e8f0;
+      padding: 20px;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 25px 0;
+    }
+
+    article pre code {
+      background: transparent;
+      padding: 0;
+      color: inherit;
+    }
+
+    /* CTA Box */
+    .cta-box {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: white;
+      padding: 30px;
+      border-radius: 12px;
+      margin: 40px 0;
+      text-align: center;
+    }
+
+    .cta-box h3 {
+      color: white;
+      border: none;
+      padding: 0;
+      margin: 0 0 15px;
+    }
+
+    .cta-box p {
+      margin: 0 0 20px;
+      opacity: 0.95;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: white;
+      color: var(--primary-dark);
+      padding: 12px 30px;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Footer */
+    footer {
+      background: var(--bg-alt);
+      padding: 40px 0;
+      text-align: center;
+      color: var(--text-light);
+      font-size: 14px;
+      border-top: 1px solid var(--border);
+    }
+
+    footer a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    /* Reading Progress */
+    .progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      background: var(--primary);
+      width: 0%;
+      z-index: 1000;
+      transition: width 0.1s;
+    }
+
+    /* Back to Top */
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s;
+      box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .back-to-top:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(37, 99, 235, 0.5);
+    }
+
+    /* TOC */
+    .toc {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 25px 30px;
+      margin: 30px 0;
+    }
+
+    .toc h4 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 15px;
+      color: var(--text);
+    }
+
+    .toc ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .toc li {
+      margin: 8px 0;
+    }
+
+    .toc a {
+      color: var(--text-light);
+      text-decoration: none;
+      font-size: 15px;
+      transition: color 0.2s;
+    }
+
+    .toc a:hover {
+      color: var(--primary);
+    }
+
+    /* Share */
+    .share-buttons {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin: 30px 0;
+    }
+
+    .share-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      color: white;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .share-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .share-btn.twitter {
+      background: #1da1f2;
+    }
+
+    .share-btn.facebook {
+      background: #1877f2;
+    }
+
+    .share-btn.line {
+      background: #00c300;
+    }
+
+    /* カスタムスタイル（GitHubリポジトリから取得） */
+    /* ========================================
+   TECHSTAR - スタイルシート
+   Generated by SEO-mate Lite
+   ======================================== */
+
+:root {
+  --primary: #30a2e8;
+  --primary-dark: #2681b9;
+  --primary-light: #6ebdee;
+  --text: #1e293b;
+  --text-light: #64748b;
+  --bg: #ffffff;
+  --bg-alt: #f8fafc;
+  --border: #e2e8f0;
+}
+
+/* Reset & Base */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: var(--primary-dark);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ========================================
+   Header
+   ======================================== */
+.site-header {
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.site-logo {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.site-logo:hover {
+  color: var(--primary);
+}
+
+.site-nav {
+  display: flex;
+  gap: 25px;
+}
+
+.site-nav a {
+  color: var(--text-light);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.site-nav a:hover {
+  color: var(--primary);
+}
+
+/* Header Centered */
+.header-centered .container {
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* ========================================
+   Hero
+   ======================================== */
+.hero {
+  background: linear-gradient(135deg, #2681b9 0%, #30a2e8 100%);
+  color: white;
+  padding: 80px 0;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: clamp(28px, 5vw, 42px);
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 18px;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ========================================
+   Posts Grid
+   ======================================== */
+.posts-grid {
+  padding: 60px 0;
+}
+
+.posts-grid h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.posts-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.post-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.post-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.post-card-image {
+  width: 100%;
+  height: 180px;
+  background: var(--bg-alt);
+  object-fit: cover;
+}
+
+.post-card-content {
+  padding: 20px;
+}
+
+.post-card-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.post-card-title a {
+  color: var(--text);
+}
+
+.post-card-title a:hover {
+  color: var(--primary);
+}
+
+.post-card-meta {
+  font-size: 13px;
+  color: var(--text-light);
+}
+
+.no-posts {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--text-light);
+  background: var(--bg-alt);
+  border-radius: 12px;
+}
+
+/* ========================================
+   Article Page
+   ======================================== */
+.article-header {
+  background: linear-gradient(135deg, #2681b9 0%, #30a2e8 100%);
+  color: white;
+  padding: 60px 0 80px;
+  margin-bottom: -40px;
+}
+
+.article-header h1 {
+  font-size: clamp(24px, 4vw, 36px);
+  font-weight: 700;
+  line-height: 1.4;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.article-meta {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  opacity: 0.85;
+}
+
+.article-content {
+  max-width: 800px;
+  margin: 0 auto;
+  background: var(--bg);
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  padding: 50px;
+}
+
+@media (max-width: 640px) {
+  .article-content {
+    padding: 30px 20px;
+    border-radius: 0;
+  }
+}
+
+.article-content h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 50px 0 20px;
+  padding-bottom: 12px;
+  border-bottom: 3px solid var(--primary);
+}
+
+.article-content h2:first-child {
+  margin-top: 0;
+}
+
+.article-content h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 35px 0 15px;
+  padding-left: 15px;
+  border-left: 4px solid var(--primary);
+}
+
+.article-content p {
+  margin: 20px 0;
+}
+
+.article-content ul, .article-content ol {
+  margin: 20px 0;
+  padding-left: 25px;
+}
+
+.article-content li {
+  margin: 10px 0;
+}
+
+.article-content strong {
+  color: var(--primary-dark);
+  font-weight: 600;
+}
+
+.article-content blockquote {
+  background: var(--bg-alt);
+  border-left: 4px solid var(--primary);
+  padding: 20px 25px;
+  margin: 25px 0;
+  border-radius: 0 8px 8px 0;
+}
+
+.article-content code {
+  background: var(--bg-alt);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: 'SF Mono', Consolas, monospace;
+  font-size: 14px;
+}
+
+.article-content pre {
+  background: #1e293b;
+  color: #e2e8f0;
+  padding: 20px;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: 25px 0;
+}
+
+.article-content pre code {
+  background: transparent;
+  padding: 0;
+  color: inherit;
+}
+
+/* ========================================
+   Footer
+   ======================================== */
+.site-footer {
+  background: var(--bg-alt);
+  border-top: 1px solid var(--border);
+  padding: 40px 0;
+  margin-top: 60px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.copyright {
+  color: var(--text-light);
+  font-size: 14px;
+}
+
+.footer-social {
+  display: flex;
+  gap: 15px;
+}
+
+.footer-social a {
+  color: var(--text-light);
+  transition: color 0.2s;
+}
+
+.footer-social a:hover {
+  color: var(--primary);
+}
+
+/* Footer Detailed */
+.footer-detailed .footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+  margin-bottom: 30px;
+}
+
+.footer-detailed h4 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: var(--text);
+}
+
+.footer-detailed ul {
+  list-style: none;
+}
+
+.footer-detailed li {
+  margin: 8px 0;
+}
+
+.footer-detailed .footer-bottom {
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+
+/* ========================================
+   Utilities
+   ======================================== */
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: var(--primary);
+  width: 0%;
+  z-index: 1000;
+  transition: width 0.1s;
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* ========================================
+   Responsive
+   ======================================== */
+@media (max-width: 768px) {
+  .site-header .container {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .hero {
+    padding: 50px 0;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+
+  </style>
+</head>
+<body>
+  <div class="progress-bar" id="progressBar"></div>
+
+  <header>
+    <div class="container">
+      <!-- カスタムヘッダー（GitHubリポジトリから取得） -->
+      <header class="site-header header-centered">
+  <div class="container">
+    <a href="/" class="site-logo">TECHSTAR</a>
+    <nav class="site-nav">
+      <a href="/">Home</a>
+      <a href="/posts">Articles</a>
+      <a href="/about">About</a>
+    </nav>
+  </div>
+</header>
+      <h1>バイブコーディングが2025年「Word of the Year」に選出｜なぜ世界が注目するのか</h1>
+      <div class="meta">
+        <time datetime="2025-11-27T07:25:25.959Z">2025年11月27日</time>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <article>
+      <p>2025年、世界的に権威のあるCollins辞書が「Word of the Year」に選んだ言葉が、IT業界に大きな波紋を広げています。その言葉は「<strong>バイブコーディング（Vibe Coding）</strong>」。聞き慣れない方も多いかもしれませんが、この新しいプログラミング手法は、エンジニアだけでなくビジネスパーソン全体に影響を与える可能性を秘めています。本記事では、なぜバイブコーディングが「Word of the Year 2025」に選ばれたのか、その背景と意味、そして私たちの働き方にどのような変化をもたらすのかを徹底解説します。</p>
+<h2>Collins辞書「Word of the Year 2025」にバイブコーディングが選出された背景</h2>
+<p>Collins辞書は毎年、その年を象徴する言葉を「Word of the Year」として発表しています。2025年に選ばれた「バイブコーディング」は、従来のプログラミング方法とは一線を画す革新的なアプローチです。</p>
+<h3>Word of the Yearとは何か</h3>
+<p>Collins辞書の「Word of the Year」は、単に流行語を選ぶだけではありません。社会的な影響力、使用頻度の増加率、文化的な重要性など、複数の観点から慎重に選定されます。過去には「climate crisis（気候危機）」や「lockdown（ロックダウン）」など、時代を映す鏡のような言葉が選ばれてきました。</p>
+<p>2025年の選考では、<strong>バイブコーディングの使用頻度が前年比で320%増加</strong>したというデータが報告されており、特にテクノロジー分野だけでなく、ビジネスメディアや教育現場でも頻繁に使われるようになったことが選出の決め手となりました。</p>
+<h3>Collins辞書が注目した言葉の定義</h3>
+<p>Collins辞書によると、バイブコーディングは「<strong>AIアシスタントに自然言語で指示を出し、コードを生成・修正してもらうプログラミング手法</strong>」と定義されています。「Vibe（雰囲気・感覚）」という言葉が示す通り、細かい構文や技術的な詳細を知らなくても、「こんな感じのものを作りたい」という大まかなイメージを伝えるだけでプログラムが完成する、まさに新時代のコーディングスタイルなのです。</p>
+<h2>バイブコーディングとは何か｜基本概念を理解する</h2>
+<p>プログラミングの世界に革命をもたらしているバイブコーディング。その本質を理解することで、なぜこれほど注目されているのかが見えてきます。</p>
+<h3>従来のプログラミングとの違い</h3>
+<p>従来のプログラミングでは、開発者は特定のプログラミング言語（Python、Java、JavaScriptなど）の文法を習得し、一文字一文字コードを書く必要がありました。エラーが出れば原因を特定し、デバッグに何時間もかけることも珍しくありません。</p>
+<p>一方、バイブコーディングでは：</p>
+<ul>
+<li><strong>自然言語でのコミュニケーション</strong>: 「ユーザー登録フォームを作って」と日本語や英語で指示するだけ</li>
+<li><strong>反復的な改善</strong>: 「もっとシンプルに」「色を変えて」など、対話形式で修正</li>
+<li><strong>即座のフィードバック</strong>: AIが数秒でコードを生成し、動作確認が可能</li>
+<li><strong>学習コストの削減</strong>: プログラミング言語の深い知識がなくても開発ができる</li>
+</ul>
+<p>この違いは、まるで外国語を学ばずに通訳を介して会話するようなものです。技術的な壁が大幅に下がったことで、<strong>プログラミングの民主化</strong>が進んでいます。</p>
+<h3>AIとの協働による新しい開発スタイル</h3>
+<p>バイブコーディングの核心は、人間とAIの<strong>協働関係</strong>にあります。AIは単なるツールではなく、開発パートナーとして機能します。</p>
+<p>開発者は以下のような役割に集中できるようになりました：</p>
+<ul>
+<li><strong>ビジョンの提示</strong>: 何を作りたいか、どんな問題を解決したいかを明確にする</li>
+<li><strong>クリエイティブな判断</strong>: デザインの方向性やユーザー体験の設計</li>
+<li><strong>品質管理</strong>: AIが生成したコードのレビューと最適化</li>
+<li><strong>戦略的思考</strong>: ビジネス価値の最大化に向けた意思決定</li>
+</ul>
+<p>実際、シリコンバレーのスタートアップでは、<strong>開発期間が従来の60%短縮された</strong>という報告もあり、プロトタイプから製品化までのスピードが劇的に向上しています。</p>
+<h3>主要なバイブコーディングツールとプラットフォーム</h3>
+<p>2025年現在、バイブコーディングを実現するツールは急速に進化しています：</p>
+<p><strong>主要プラットフォーム：</strong></p>
+<ul>
+<li><strong>GitHub Copilot</strong>: マイクロソフトが提供する、最も普及しているコード生成AI</li>
+<li><strong>Cursor</strong>: AIネイティブなコードエディタとして人気急上昇</li>
+<li><strong>Replit AI</strong>: ブラウザ上で完結する初心者向けプラットフォーム</li>
+<li><strong>Claude for Coding</strong>: 複雑なロジックの説明に優れたAnthropicのAI</li>
+</ul>
+<p>これらのツールは、それぞれ異なる強みを持ち、用途に応じて使い分けられています。[AIプログラミングツール比較記事へのリンク]</p>
+<h2>なぜ世界が注目するのか｜バイブコーディングの社会的インパクト</h2>
+<p>Word of the Year 2025に選ばれた背景には、単なる技術トレンドを超えた、社会全体への影響があります。</p>
+<h3>IT人材不足問題への解決策</h3>
+<p>世界的にエンジニア不足が深刻化しています。経済産業省の報告によれば、日本だけでも<strong>2030年までに最大79万人のIT人材が不足する</strong>と予測されています。</p>
+<p>バイブコーディングは、この問題に対する現実的な解決策として注目されています：</p>
+<ul>
+<li><strong>非エンジニアの参入</strong>: マーケターやデザイナーが簡単なツールを自作できる</li>
+<li><strong>教育期間の短縮</strong>: 従来3〜5年かかった人材育成が数ヶ月に</li>
+<li><strong>生産性の向上</strong>: 熟練エンジニアの開発速度が2〜3倍に加速</li>
+<li><strong>グローバルな人材活用</strong>: 言語の壁を越えた開発が可能に</li>
+</ul>
+<p>実際、企業の人材採用基準も変化しており、「コーディングスキル」よりも「問題解決能力」や「AIとのコミュニケーション力」が重視されるようになっています。</p>
+<h3>教育現場での活用と次世代への影響</h3>
+<p>2025年、多くの教育機関がバイブコーディングをカリキュラムに組み込み始めています。</p>
+<p><strong>具体的な変化：</strong></p>
+<ul>
+<li>小学校でのプログラミング教育が「AIとの対話」を中心に再設計</li>
+<li>大学のコンピューターサイエンス学部が「AI協働開発」の専門コースを新設</li>
+<li>オンライン学習プラットフォームでバイブコーディング講座が急増</li>
+</ul>
+<p>従来「プログラミングは難しい」と敬遠していた学生たちが、<strong>自分のアイデアを形にする楽しさ</strong>を体験できるようになり、テクノロジーへの関心が高まっています。</p>
+<p>ある調査では、バイブコーディングを学んだ学生の<strong>87%が「自分でアプリを作れる」と自信を持つ</strong>ようになったという結果も出ています。</p>
+<h3>ビジネス界における生産性革命</h3>
+<p>企業活動全体にも大きな変化が起きています。</p>
+<p><strong>業種別の活用例：</strong></p>
+<p>| 業種 | 活用方法 | 効果 | |------|----------|------| | 小売業 | 在庫管理システムの内製化 | 開発コスト70%削減 | | 製造業 | 生産ラインの監視ツール開発 | 導入期間を6ヶ月から2週間に短縮 | | 金融業 | データ分析ツールの迅速な構築 | アナリストの生産性40%向上 | | 医療業 | 患者管理システムのカスタマイズ | 現場のニーズに即座に対応 |</p>
+<p>特に注目すべきは、<strong>非IT企業での内製化の動き</strong>です。これまで外部委託していた小規模なシステム開発を、社内の業務担当者が直接行えるようになり、コミュニケーションロスが大幅に減少しています。</p>
+<h2>Collins辞書が示すテクノロジートレンドの変遷</h2>
+<p>Word of the Yearの歴史を振り返ると、テクノロジーと社会の関係性の変化が見えてきます。</p>
+<h3>過去のWord of the Yearとの比較</h3>
+<p>近年のテクノロジー関連の選出語を見てみましょう：</p>
+<ul>
+<li><strong>2020年</strong>: Lockdown（パンデミックによるデジタル化の加速）</li>
+<li><strong>2022年</strong>: Permacrisis（永続的危機、デジタル疲労の象徴）</li>
+<li><strong>2023年</strong>: AI（生成AIの爆発的普及）</li>
+<li><strong>2024年</strong>: Manifest（デジタルとリアルの融合願望）</li>
+<li><strong>2025年</strong>: Vibe Coding（AI活用の実用化段階）</li>
+</ul>
+<p>この流れを見ると、<strong>テクノロジーが「新しいもの」から「当たり前に使うもの」へと変化</strong>していることがわかります。バイブコーディングの選出は、AIが特別な存在ではなく、日常的なパートナーとして定着したことを象徴しています。</p>
+<h3>言葉が映し出す時代の変化</h3>
+<p>「Vibe」という言葉の選択自体に、深い意味があります。</p>
+<p>従来のプログラミングは<strong>精密性と正確性</strong>が求められる世界でした。しかし「Vibe（雰囲気・感覚）」という言葉が示すのは、<strong>直感的で柔軟なアプローチ</strong>です。これは、テクノロジーが専門家だけのものから、誰もが使える道具へと進化したことを表しています。</p>
+<p>Collins辞書の言語学者は、「Vibeという非技術的な言葉が技術用語と結びついたことが、この時代の本質を捉えている」とコメントしています。</p>
+<h2>バイブコーディングがもたらす未来のエンジニアリング</h2>
+<p>この新しい開発手法は、エンジニアの役割そのものを再定義しつつあります。</p>
+<h3>エンジニアの役割はどう変わるか</h3>
+<p>「AIがコードを書くなら、エンジニアは不要になる」という懸念の声もありますが、実態は異なります。</p>
+<p><strong>進化するエンジニアの役割：</strong></p>
+<li><strong>アーキテクト（設計者）</strong>: システム全体の構造を設計する高度な役割</li>
+<li><strong>キュレーター（選別者）</strong>: AIが生成した複数の解決策から最適なものを選択</li>
+<li><strong>コーチ（指導者）</strong>: AIをより良い方向に導くプロンプトエンジニアリング</li>
+<li><strong>レビュアー（審査者）</strong>: セキュリティや品質基準の確保</li>
+<p>実際、<strong>上級エンジニアの需要は増加傾向</strong>にあります。バイブコーディングによって初級レベルのコーディング作業は自動化されましたが、その分、より高度な判断や創造的な問題解決に人材が必要とされているのです。</p>
+<h3>創造性と技術の新しい関係性</h3>
+<p>バイブコーディングは、プログラミングを<strong>芸術に近づけました</strong>。</p>
+<p>従来、開発者は構文エラーやバグとの戦いに時間を費やしていました。しかし今や、その時間を以下に使えるようになっています：</p>
+<ul>
+<li><strong>ユーザー体験の深い理解</strong>: どうすれば使いやすいか考える時間</li>
+<li><strong>革新的なアイデアの実験</strong>: 試行錯誤のコストが劇的に低下</li>
+<li><strong>ビジネス価値の最大化</strong>: 技術を手段として、目的達成に集中</li>
+<li><strong>チームコラボレーション</strong>: 非エンジニアとのコミュニケーション強化</li>
+</ul>
+<p>あるスタートアップのCTOは「バイブコーディングのおかげで、エンジニアが<strong>真のクリエイターになれた</strong>」と語っています。</p>
+<h3>懸念される課題と対応策</h3>
+<p>もちろん、課題も存在します。</p>
+<p><strong>主な懸念点：</strong></p>
+<ul>
+<li><strong>セキュリティリスク</strong>: AIが生成したコードの脆弱性</li>
+<li><strong>依存性の増大</strong>: AI障害時の影響</li>
+<li><strong>品質のばらつき</strong>: 複雑な要件での精度問題</li>
+<li><strong>知識の空洞化</strong>: 基礎的な理解の不足</li>
+</ul>
+<p><strong>対応策として：</strong></p>
+<li><strong>コードレビューの必須化</strong>: AIが生成したコードも必ず人間がチェック</li>
+<li><strong>セキュリティスキャンの自動化</strong>: 脆弱性検出ツールとの組み合わせ</li>
+<li><strong>基礎教育の継続</strong>: 仕組みを理解した上でAIを活用</li>
+<li><strong>ハイブリッドアプローチ</strong>: 重要部分は人間が直接コーディング</li>
+<p>先進的な企業では、これらの対策を<strong>開発プロセスに組み込むことが標準化</strong>されつつあります。[セキュアなバイブコーディング実践ガイドへのリンク]</p>
+<h2>日本における「Word of the Year 2025」の受け止め方</h2>
+<p>グローバルなトレンドとして注目されるバイブコーディングですが、日本独自の反応も興味深いものがあります。</p>
+<h3>日本企業の導入状況と反応</h3>
+<p>日本企業の対応は二極化しています。</p>
+<p><strong>積極派の企業：</strong></p>
+<ul>
+<li>IT系スタートアップ：すでに開発の主流手法として定着</li>
+<li>大手製造業：DX推進の一環として積極導入</li>
+<li>教育系企業：新サービス開発のスピードアップに活用</li>
+</ul>
+<p><strong>慎重派の企業：</strong></p>
+<ul>
+<li>金融機関：セキュリティとコンプライアンスの観点から段階的導入</li>
+<li>公共機関：システムの信頼性を重視し、検証期間を設定</li>
+<li>伝統的製造業：既存システムとの統合性を確認中</li>
+</ul>
+<p>日本特有の「品質へのこだわり」が、慎重な姿勢につながっている側面もありますが、<strong>2025年中に大手企業の約65%が何らかの形でバイブコーディングを試験導入</strong>する見込みです。</p>
+<h3>日本語でのバイブコーディング環境</h3>
+<p>言語の壁も大きなテーマです。</p>
+<p>初期のバイブコーディングツールは英語中心でしたが、2025年には状況が大きく改善：</p>
+<ul>
+<li><strong>日本語対応の充実</strong>: 主要ツールがすべて自然な日本語入力に対応</li>
+<li><strong>日本語コメント生成</strong>: コードに日本語の説明が自動付与</li>
+<li><strong>文化的配慮</strong>: 日本特有のビジネスルールや慣習を理解したコード生成</li>
+<li><strong>方言対応</strong>: 大阪弁や九州弁でも指示が可能な実験的取り組み</li>
+</ul>
+<p>ある調査では、<strong>日本語でのバイブコーディングの精度が英語と同等レベルに達した</strong>という結果も報告されており、言語のハンディキャップは急速に解消されつつあります。</p>
+<h2>バイブコーディングを始めるための実践ガイド</h2>
+<p>「Word of the Year 2025」に選ばれたバイブコーディングを、実際に始めてみたい方へ向けた具体的なステップを紹介します。</p>
+<h3>初心者が今日から始められる3つのステップ</h3>
+<p>プログラミング経験がなくても大丈夫です。以下の手順で始めましょう。</p>
+<p><strong>ステップ1：ツールの選択（所要時間：10分）</strong></p>
+<ul>
+<li>初心者向け：無料で使えるReplitやGoogle Colabから開始</li>
+<li>予算がある場合：GitHub CopilotやCursorの有料プランを検討</li>
+<li>目的を明確に：Webアプリ、データ分析、自動化など</li>
+</ul>
+<p><strong>ステップ2：小さなプロジェクトから開始（所要時間：30分〜1時間）</strong></p>
+<ul>
+<li>「Hello World」ではなく実用的なものを：簡単な計算機、ToDoリストなど</li>
+<li>具体的に指示する：「赤いボタンのある計算機」のように詳細に</li>
+<li>試行錯誤を楽しむ：最初はうまくいかなくても対話で改善</li>
+</ul>
+<p><strong>ステップ3：コミュニティで学ぶ（継続的）</strong></p>
+<ul>
+<li>オンラインフォーラムに参加：他の初心者の質問から学ぶ</li>
+<li>作品を共有：フィードバックで急速に成長</li>
+<li>定期的な実践：週に1回、小さなプロジェクトに挑戦</li>
+</ul>
+<p>実際、<strong>プログラミング初心者が1週間で実用的なアプリを完成させた</strong>事例が数多く報告されています。</p>
+<h3>効果的なプロンプトの書き方</h3>
+<p>バイブコーディングの質を左右するのが「プロンプト（指示文）」です。</p>
+<p><strong>良いプロンプトの特徴：</strong></p>
+<p>❌ 悪い例：「アプリを作って」 ✅ 良い例：「ユーザー名とパスワードを入力できるログインフォームを作って。背景は青色で、ボタンは角を丸くして。送信時にバリデーションも追加して」</p>
+<p><strong>プロンプト作成の5つのポイント：</strong></p>
+<li><strong>具体性</strong>: 曖昧な表現を避け、詳細を明示</li>
+<li><strong>段階的指示</strong>: 一度に全部ではなく、ステップごとに</li>
+<li><strong>例示</strong>: 「Googleのログイン画面のような」など既存のものを参照</li>
+<li><strong>制約条件</strong>: 使える技術やライブラリがあれば明示</li>
+<li><strong>期待する動作</strong>: 「クリックしたら○○が起こる」のように結果を説明</li>
+<p>プロンプトエンジニアリングは、<strong>バイブコーディング時代の新しい必須スキル</strong>となっています。[プロンプトライティングの詳細ガイドへのリンク]</p>
+<h3>学習リソースとコミュニティ</h3>
+<p>継続的な学習をサポートするリソースが充実しています。</p>
+<p><strong>おすすめの学習プラットフォーム：</strong></p>
+<ul>
+<li><strong>Udemy</strong>: バイブコーディング専門コースが多数登場</li>
+<li><strong>YouTube</strong>: 実践的なチュートリアル動画が豊富</li>
+<li><strong>Zenn/Qiita</strong>: 日本語での知見共有が活発</li>
+<li><strong>Discord/Slack</strong>: リアルタイムで質問できるコミュニティ</li>
+</ul>
+<p><strong>定期的なイベント：</strong></p>
+<ul>
+<li>オンラインハッカソン：バイブコーディングのみで開発競争</li>
+<li>勉強会：初心者向けから上級者向けまで幅広く</li>
+<li>ウェビナー：企業の導入事例やベストプラクティス共有</li>
+</ul>
+<p>これらのコミュニティでは、<strong>年齢や職業に関係なく、誰もが学習者として歓迎される</strong>雰囲気があります。</p>
+<h2>Collins辞書「Word of the Year」から読み解く2026年以降の展望</h2>
+<p>2025年の「Word of the Year」受賞は終わりではなく、始まりです。</p>
+<h3>次に来るテクノロジートレンド予測</h3>
+<p>バイブコーディングの次に注目されているキーワード：</p>
+<ul>
+<li><strong>Ambient Computing（環境コンピューティング）</strong>: AIが環境に溶け込み、意識せずに使う時代</li>
+<li><strong>No-Code Ops（ノーコード運用）</strong>: 開発だけでなく、運用・保守もノーコードで</li>
+<li><strong>Ethical AI（倫理的AI）</strong>: AI活用の透明性と責任の重視</li>
+<li><strong>Quantum-Accessible（量子アクセシブル）</strong>: 量子コンピューティングの民主化</li>
+</ul>
+<p>専門家の間では、<strong>2026年のWord of the Yearは「AI Co-Worker（AI同僚）」になる</strong>との予測もあります。</p>
+<h3>人間とAIの共生時代における私たちの役割</h3>
+<p>バイブコーディングは、より大きな問いを私たちに投げかけています。</p>
+<p><strong>これからの時代に求められる能力：</strong></p>
+<li><strong>問題発見力</strong>: 何を解決すべきか見極める力</li>
+<li><strong>創造的思考</strong>: AIにはできない独創的なアイデア</li>
+<li><strong>倫理的判断</strong>: 技術をどう使うべきかの判断</li>
+<li><strong>コミュニケーション力</strong>: AIや人間との協働能力</li>
+<li><strong>継続学習力</strong>: 変化し続ける環境への適応</li>
+<p><strong>Collins辞書の編集長は「バイブコーディングは単なる技術ではなく、人間の創造性を解放する文化的運動」</strong>とコメントしています。</p>
+<p>これは、テクノロジーが人間を置き換えるのではなく、<strong>人間がより人間らしい仕事に集中できる未来</strong>を示唆しています。</p>
+<h3>持続可能な技術発展への示唆</h3>
+<p>バイブコーディングには、環境面でのメリットもあります。</p>
+<ul>
+<li><strong>開発リソースの削減</strong>: 試行錯誤の効率化でエネルギー消費削減</li>
+<li><strong>人材の最適配置</strong>: 適材適所で無駄な移動や教育を削減</li>
+<li><strong>長期的なメンテナンス性</strong>: AIが継続的にコードを最適化</li>
+</ul>
+<p>持続可能な開発目標（SDGs）の観点からも、<strong>バイブコーディングは技術の民主化と効率化を両立させる</strong>モデルケースとして評価されています。</p>
+<h2>まとめ｜Word of the Year 2025が示す新しい時代</h2>
+<p>Collins辞書が選んだ「Word of the Year 2025」のバイブコーディングは、単なるプログラミング手法の変化ではなく、<strong>私たちとテクノロジーの関係性の根本的な変革</strong>を象徴しています。</p>
+<p><strong>本記事の重要ポイント：</strong></p>
+<ul>
+<li>バイブコーディングは自然言語でAIとコードを共創する新しい開発スタイル</li>
+<li>世界的なIT人材不足の解決策として、企業・教育機関で急速に普及中</li>
+<li>Collins辞書の選出は、AIが特別な存在から日常のパートナーへ進化したことを示す</li>
+<li>エンジニアの役割は「コードを書く人」から「価値を創造する人」へ進化</li>
+<li>日本でも65%以上の企業が2025年中に導入を検討または実施中</li>
+<li>初心者でも適切なツールとプロンプトで、今日から実践可能</li>
+</ul>
+<p><strong>これからのアクション：</strong></p>
+<li><strong>まずは試す</strong>: 無料ツールで小さなプロジェクトから始めてみる</li>
+<li><strong>学び続ける</strong>: コミュニティに参加し、最新情報をキャッチアップ</li>
+<li><strong>考える習慣</strong>: 自分の仕事にどう活かせるか日々考える</li>
+<li><strong>共有する</strong>: 学んだことや作ったものを積極的に発信</li>
+<p>2025年が「バイブコーディング元年」と呼ばれる日が来るかもしれません。この歴史的な転換点に立ち会っている今、Word of the Year 2025に選ばれたこの技術を理解し、活用することは、単なるスキルアップではなく、<strong>新しい時代を生きるための必須の教養</strong>となるでしょう。</p>
+<p>あなたも今日から、バイブコーディングの世界に飛び込んでみませんか？技術的な壁はもう存在しません。必要なのは、あなたの創造性とやってみようという一歩だけです。</p>
+<p>[バイブコーディング初心者向けスタートガイドへのリンク] [2025年最新AIツール比較記事へのリンク]</p>
+
+      <div class="share-buttons">
+        <a href="https://twitter.com/intent/tweet?text=%E3%83%90%E3%82%A4%E3%83%96%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%81%8C2025%E5%B9%B4%E3%80%8CWord%20of%20the%20Year%E3%80%8D%E3%81%AB%E9%81%B8%E5%87%BA%EF%BD%9C%E3%81%AA%E3%81%9C%E4%B8%96%E7%95%8C%E3%81%8C%E6%B3%A8%E7%9B%AE%E3%81%99%E3%82%8B%E3%81%AE%E3%81%8B&url=" class="share-btn twitter" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          Post
+        </a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=" class="share-btn facebook" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          Share
+        </a>
+        <a href="https://line.me/R/msg/text/?%E3%83%90%E3%82%A4%E3%83%96%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%81%8C2025%E5%B9%B4%E3%80%8CWord%20of%20the%20Year%E3%80%8D%E3%81%AB%E9%81%B8%E5%87%BA%EF%BD%9C%E3%81%AA%E3%81%9C%E4%B8%96%E7%95%8C%E3%81%8C%E6%B3%A8%E7%9B%AE%E3%81%99%E3%82%8B%E3%81%AE%E3%81%8B%0D%0A" class="share-btn line" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+          LINE
+        </a>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="container">
+      <!-- カスタムフッター（GitHubリポジトリから取得） -->
+      <footer class="site-footer footer-detailed">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <h4>TECHSTAR</h4>
+        <p>主にAI×開発関係に役立つ情報発信をしていきます。合同会社リバイラルの運営メディアです。</p>
+      </div>
+      <div class="footer-links">
+        <h4>Links</h4>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/posts">Articles</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="mailto:info@revirall.jp">Contact</a></li>
+        </ul>
+      </div>
+      
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 合同会社リバイラル All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="ページトップへ戻る">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <script>
+    // Reading Progress Bar
+    window.addEventListener('scroll', () => {
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      document.getElementById('progressBar').style.width = scrolled + '%';
+
+      // Back to Top Button
+      const backToTop = document.getElementById('backToTop');
+      if (winScroll > 300) {
+        backToTop.classList.add('visible');
+      } else {
+        backToTop.classList.remove('visible');
+      }
+    });
+
+    // Back to Top Click
+    document.getElementById('backToTop').addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+
+    // カスタムスクリプト（GitHubリポジトリから取得）
+    // ========================================
+// SEO-mate Lite - Main JavaScript
+// ========================================
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Reading Progress Bar
+  const progressBar = document.querySelector('.progress-bar');
+  if (progressBar) {
+    window.addEventListener('scroll', function() {
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      progressBar.style.width = scrolled + '%';
+    });
+  }
+
+  // Back to Top Button
+  const backToTop = document.querySelector('.back-to-top');
+  if (backToTop) {
+    window.addEventListener('scroll', function() {
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      if (winScroll > 300) {
+        backToTop.classList.add('visible');
+      } else {
+        backToTop.classList.remove('visible');
+      }
+    });
+
+    backToTop.addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+
+  // Mobile Navigation Toggle
+  const navToggle = document.querySelector('.nav-toggle');
+  const siteNav = document.querySelector('.site-nav');
+  if (navToggle && siteNav) {
+    navToggle.addEventListener('click', function() {
+      siteNav.classList.toggle('active');
+    });
+  }
+});
+
+
+  </script>
+</body>
+</html>
