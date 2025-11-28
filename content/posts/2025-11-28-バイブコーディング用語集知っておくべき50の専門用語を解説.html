@@ -1,0 +1,1819 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="バイブコーディングの専門用語を初心者にもわかりやすく解説。AI開発に欠かせない50の重要用語をカテゴリ別に紹介し、実務で即使える知識が身につきます。">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="バイブコーディング用語集｜知っておくべき50の専門用語を解説">
+  <meta property="og:description" content="バイブコーディングの専門用語を初心者にもわかりやすく解説。AI開発に欠かせない50の重要用語をカテゴリ別に紹介し、実務で即使える知識が身につきます。">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://source.unsplash.com/1200x630/?artificial%2Cintelligence">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="バイブコーディング用語集｜知っておくべき50の専門用語を解説">
+  <meta name="twitter:description" content="バイブコーディングの専門用語を初心者にもわかりやすく解説。AI開発に欠かせない50の重要用語をカテゴリ別に紹介し、実務で即使える知識が身につきます。">
+  <meta name="twitter:image" content="https://source.unsplash.com/1200x630/?artificial%2Cintelligence">
+  <title>バイブコーディング用語集｜知っておくべき50の専門用語を解説</title>
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --text: #1e293b;
+      --text-light: #64748b;
+      --bg: #ffffff;
+      --bg-alt: #f8fafc;
+      --border: #e2e8f0;
+      --success: #10b981;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+      font-size: 16px;
+      line-height: 1.8;
+      color: var(--text);
+      background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header with Hero Image */
+    header {
+      position: relative;
+      color: white;
+      padding: 0;
+      margin-bottom: 0;
+      overflow: hidden;
+    }
+
+    .hero-image {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(to bottom, rgba(30, 58, 95, 0.3) 0%, rgba(30, 58, 95, 0.85) 70%, rgba(30, 58, 95, 0.95) 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 40px 20px;
+    }
+
+    header .container {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .site-name {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      opacity: 0.9;
+      margin-bottom: 15px;
+    }
+
+    header h1 {
+      font-size: clamp(22px, 4.5vw, 32px);
+      font-weight: 700;
+      line-height: 1.5;
+      letter-spacing: -0.3px;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+      margin-bottom: 15px;
+    }
+
+    .meta {
+      font-size: 14px;
+      opacity: 0.85;
+    }
+
+    .image-credit {
+      position: absolute;
+      bottom: 10px;
+      right: 15px;
+      font-size: 11px;
+      opacity: 0.6;
+    }
+
+    .image-credit a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .image-credit a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 640px) {
+      .hero-image {
+        height: 300px;
+      }
+
+      .hero-overlay {
+        padding: 30px 15px;
+      }
+
+      header h1 {
+        font-size: 20px;
+      }
+    }
+
+    /* Article */
+    article {
+      background: var(--bg);
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      padding: 50px;
+      margin-top: 40px;
+      margin-bottom: 40px;
+    }
+
+    @media (max-width: 640px) {
+      article {
+        padding: 30px 20px;
+        border-radius: 0;
+        margin: 0 -20px 40px;
+      }
+    }
+
+    article h2 {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--text);
+      margin: 50px 0 20px;
+      padding-bottom: 12px;
+      border-bottom: 3px solid var(--primary);
+      letter-spacing: -0.3px;
+    }
+
+    article h2:first-child {
+      margin-top: 0;
+    }
+
+    article h3 {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--text);
+      margin: 35px 0 15px;
+      padding-left: 15px;
+      border-left: 4px solid var(--primary);
+    }
+
+    article p {
+      margin: 20px 0;
+      text-align: justify;
+    }
+
+    article ul, article ol {
+      margin: 20px 0;
+      padding-left: 25px;
+    }
+
+    article li {
+      margin: 10px 0;
+    }
+
+    article strong {
+      color: var(--primary-dark);
+      font-weight: 600;
+    }
+
+    article a {
+      color: var(--primary);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+
+    article a:hover {
+      border-bottom-color: var(--primary);
+    }
+
+    /* Blockquote */
+    article blockquote {
+      background: var(--bg-alt);
+      border-left: 4px solid var(--primary);
+      padding: 20px 25px;
+      margin: 25px 0;
+      border-radius: 0 8px 8px 0;
+    }
+
+    /* Table */
+    article table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 25px 0;
+      font-size: 15px;
+    }
+
+    article th, article td {
+      padding: 12px 15px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+
+    article th {
+      background: var(--bg-alt);
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    article tr:hover {
+      background: var(--bg-alt);
+    }
+
+    /* Code */
+    article code {
+      background: var(--bg-alt);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: 'SF Mono', Consolas, monospace;
+      font-size: 14px;
+    }
+
+    article pre {
+      background: #1e293b;
+      color: #e2e8f0;
+      padding: 20px;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 25px 0;
+    }
+
+    article pre code {
+      background: transparent;
+      padding: 0;
+      color: inherit;
+    }
+
+    /* CTA Box */
+    .cta-box {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: white;
+      padding: 30px;
+      border-radius: 12px;
+      margin: 40px 0;
+      text-align: center;
+    }
+
+    .cta-box h3 {
+      color: white;
+      border: none;
+      padding: 0;
+      margin: 0 0 15px;
+    }
+
+    .cta-box p {
+      margin: 0 0 20px;
+      opacity: 0.95;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: white;
+      color: var(--primary-dark);
+      padding: 12px 30px;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Footer */
+    footer {
+      background: var(--bg-alt);
+      padding: 40px 0;
+      text-align: center;
+      color: var(--text-light);
+      font-size: 14px;
+      border-top: 1px solid var(--border);
+    }
+
+    footer a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    /* Reading Progress */
+    .progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      background: var(--primary);
+      width: 0%;
+      z-index: 1000;
+      transition: width 0.1s;
+    }
+
+    /* Back to Top */
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s;
+      box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .back-to-top:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(37, 99, 235, 0.5);
+    }
+
+    /* TOC */
+    .toc {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 25px 30px;
+      margin: 30px 0;
+    }
+
+    .toc h4 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 15px;
+      color: var(--text);
+    }
+
+    .toc ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .toc li {
+      margin: 8px 0;
+    }
+
+    .toc a {
+      color: var(--text-light);
+      text-decoration: none;
+      font-size: 15px;
+      transition: color 0.2s;
+    }
+
+    .toc a:hover {
+      color: var(--primary);
+    }
+
+    /* Share */
+    .share-buttons {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin: 30px 0;
+    }
+
+    .share-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      color: white;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .share-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .share-btn.twitter {
+      background: #1da1f2;
+    }
+
+    .share-btn.facebook {
+      background: #1877f2;
+    }
+
+    .share-btn.line {
+      background: #00c300;
+    }
+
+    /* ========================================
+       SEO強化・視認性向上コンポーネント
+       ======================================== */
+
+    /* マーカー（蛍光ペン風下線） */
+    .marker {
+      background: linear-gradient(transparent 60%, #fef08a 60%);
+      padding: 0 2px;
+    }
+
+    .marker-pink {
+      background: linear-gradient(transparent 60%, #fbcfe8 60%);
+    }
+
+    .marker-green {
+      background: linear-gradient(transparent 60%, #bbf7d0 60%);
+    }
+
+    .marker-blue {
+      background: linear-gradient(transparent 60%, #bfdbfe 60%);
+    }
+
+    /* 下線強調 */
+    .underline {
+      border-bottom: 2px solid var(--primary);
+      padding-bottom: 2px;
+    }
+
+    .underline-wavy {
+      text-decoration: underline wavy var(--primary);
+      text-underline-offset: 4px;
+    }
+
+    /* 吹き出し（左） */
+    .balloon {
+      position: relative;
+      display: inline-block;
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 15px 20px;
+      margin: 20px 0 20px 50px;
+    }
+
+    .balloon::before {
+      content: '';
+      position: absolute;
+      left: -10px;
+      top: 15px;
+      border: 10px solid transparent;
+      border-right-color: var(--border);
+    }
+
+    .balloon::after {
+      content: '';
+      position: absolute;
+      left: -8px;
+      top: 15px;
+      border: 10px solid transparent;
+      border-right-color: var(--bg-alt);
+    }
+
+    .balloon-icon {
+      position: absolute;
+      left: -50px;
+      top: 5px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    /* 吹き出し（右・回答風） */
+    .balloon-right {
+      margin: 20px 50px 20px 0;
+      background: #e0f2fe;
+      border-color: #7dd3fc;
+    }
+
+    .balloon-right::before {
+      left: auto;
+      right: -10px;
+      border-right-color: transparent;
+      border-left-color: #7dd3fc;
+    }
+
+    .balloon-right::after {
+      left: auto;
+      right: -8px;
+      border-right-color: transparent;
+      border-left-color: #e0f2fe;
+    }
+
+    .balloon-right .balloon-icon {
+      left: auto;
+      right: -50px;
+      background: #0ea5e9;
+    }
+
+    /* ポイントボックス */
+    .point-box {
+      background: #fffbeb;
+      border: 1px solid #fbbf24;
+      border-radius: 12px;
+      padding: 20px 25px;
+      margin: 25px 0;
+      position: relative;
+    }
+
+    .point-box::before {
+      content: 'POINT';
+      position: absolute;
+      top: -12px;
+      left: 20px;
+      background: #fbbf24;
+      color: white;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 4px;
+      letter-spacing: 1px;
+    }
+
+    .point-box p:first-child {
+      margin-top: 5px;
+    }
+
+    /* 注意ボックス */
+    .warning-box {
+      background: #fef2f2;
+      border: 1px solid #fca5a5;
+      border-radius: 12px;
+      padding: 20px 25px;
+      margin: 25px 0;
+      position: relative;
+    }
+
+    .warning-box::before {
+      content: 'WARNING';
+      position: absolute;
+      top: -12px;
+      left: 20px;
+      background: #ef4444;
+      color: white;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 4px;
+      letter-spacing: 1px;
+    }
+
+    /* メモボックス */
+    .memo-box {
+      background: #f0fdf4;
+      border: 1px solid #86efac;
+      border-radius: 12px;
+      padding: 20px 25px;
+      margin: 25px 0;
+      position: relative;
+    }
+
+    .memo-box::before {
+      content: 'MEMO';
+      position: absolute;
+      top: -12px;
+      left: 20px;
+      background: #22c55e;
+      color: white;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 4px;
+      letter-spacing: 1px;
+    }
+
+    /* チェックリスト */
+    .check-list {
+      list-style: none;
+      padding: 0;
+      margin: 25px 0;
+    }
+
+    .check-list li {
+      position: relative;
+      padding-left: 30px;
+      margin: 12px 0;
+    }
+
+    .check-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 4px;
+      width: 20px;
+      height: 20px;
+      background: var(--success);
+      border-radius: 50%;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E");
+      background-size: 14px;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    /* ステップリスト */
+    .step-list {
+      list-style: none;
+      padding: 0;
+      margin: 25px 0;
+      counter-reset: step-counter;
+    }
+
+    .step-list li {
+      position: relative;
+      padding-left: 50px;
+      margin: 20px 0;
+      min-height: 40px;
+    }
+
+    .step-list li::before {
+      counter-increment: step-counter;
+      content: 'STEP ' counter(step-counter);
+      position: absolute;
+      left: 0;
+      top: 0;
+      background: var(--primary);
+      color: white;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 4px 8px;
+      border-radius: 4px;
+      letter-spacing: 0.5px;
+    }
+
+    /* Q&A */
+    .qa-box {
+      margin: 30px 0;
+    }
+
+    .qa-question {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      margin-bottom: 15px;
+    }
+
+    .qa-answer {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      padding-left: 20px;
+    }
+
+    .qa-label {
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 16px;
+    }
+
+    .qa-question .qa-label {
+      background: #ef4444;
+      color: white;
+    }
+
+    .qa-answer .qa-label {
+      background: #3b82f6;
+      color: white;
+    }
+
+    .qa-text {
+      flex: 1;
+      padding-top: 4px;
+    }
+
+    /* 比較テーブル */
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 25px 0;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .comparison-table th {
+      background: var(--primary);
+      color: white;
+      padding: 15px;
+      font-weight: 600;
+    }
+
+    .comparison-table td {
+      padding: 15px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .comparison-table tr:nth-child(even) {
+      background: var(--bg-alt);
+    }
+
+    .comparison-table .good {
+      color: #16a34a;
+      font-weight: 600;
+    }
+
+    .comparison-table .bad {
+      color: #dc2626;
+      font-weight: 600;
+    }
+
+    /* バッジ */
+    .badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    .badge-primary {
+      background: var(--primary);
+      color: white;
+    }
+
+    .badge-success {
+      background: var(--success);
+      color: white;
+    }
+
+    .badge-warning {
+      background: #f59e0b;
+      color: white;
+    }
+
+    .badge-danger {
+      background: #ef4444;
+      color: white;
+    }
+
+    .badge-outline {
+      background: transparent;
+      border: 1px solid var(--primary);
+      color: var(--primary);
+    }
+
+    /* 引用ボックス（人物付き） */
+    .quote-box {
+      background: var(--bg-alt);
+      border-radius: 12px;
+      padding: 25px;
+      margin: 25px 0;
+      position: relative;
+    }
+
+    .quote-box::before {
+      content: '"';
+      position: absolute;
+      top: -10px;
+      left: 20px;
+      font-size: 60px;
+      color: var(--primary);
+      opacity: 0.3;
+      font-family: Georgia, serif;
+      line-height: 1;
+    }
+
+    .quote-box p {
+      font-style: italic;
+      padding-left: 30px;
+      margin: 0;
+    }
+
+    .quote-box cite {
+      display: block;
+      text-align: right;
+      margin-top: 15px;
+      font-style: normal;
+      color: var(--text-light);
+      font-size: 14px;
+    }
+
+    /* 関連記事ボックス */
+    .related-box {
+      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+      border-radius: 12px;
+      padding: 20px 25px;
+      margin: 25px 0;
+    }
+
+    .related-box h4 {
+      font-size: 14px;
+      color: var(--text-light);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .related-box h4::before {
+      content: '';
+      width: 16px;
+      height: 16px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2364748b'%3E%3Cpath d='M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z'/%3E%3C/svg%3E");
+    }
+
+    .related-box a {
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    /* キーワードハイライト */
+    .keyword {
+      background: #dbeafe;
+      color: var(--primary-dark);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-weight: 500;
+    }
+
+    /* 数字ハイライト */
+    .number-highlight {
+      font-size: 1.5em;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    /* アコーディオン */
+    .accordion {
+      margin: 20px 0;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .accordion-header {
+      background: var(--bg-alt);
+      padding: 15px 20px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.2s;
+    }
+
+    .accordion-header:hover {
+      background: var(--border);
+    }
+
+    .accordion-header::after {
+      content: '+';
+      font-size: 20px;
+      color: var(--text-light);
+    }
+
+    .accordion.open .accordion-header::after {
+      content: '-';
+    }
+
+    .accordion-content {
+      padding: 0 20px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s, padding 0.3s;
+    }
+
+    .accordion.open .accordion-content {
+      padding: 20px;
+      max-height: 500px;
+    }
+
+    /* タイムライン */
+    .timeline {
+      position: relative;
+      padding-left: 30px;
+      margin: 25px 0;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 8px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--border);
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-bottom: 25px;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -26px;
+      top: 5px;
+      width: 12px;
+      height: 12px;
+      background: var(--primary);
+      border-radius: 50%;
+      border: 2px solid white;
+      box-shadow: 0 0 0 2px var(--primary);
+    }
+
+    .timeline-date {
+      font-size: 13px;
+      color: var(--text-light);
+      margin-bottom: 5px;
+    }
+
+    .timeline-content {
+      font-weight: 500;
+    }
+
+    /* プログレスバー */
+    .progress-indicator {
+      margin: 20px 0;
+    }
+
+    .progress-indicator-label {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+
+    .progress-indicator-bar {
+      height: 8px;
+      background: var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .progress-indicator-fill {
+      height: 100%;
+      background: var(--primary);
+      border-radius: 4px;
+      transition: width 0.3s;
+    }
+
+    /* 評価スター */
+    .rating {
+      display: inline-flex;
+      gap: 4px;
+      color: #fbbf24;
+      font-size: 20px;
+    }
+
+    .rating-empty {
+      color: var(--border);
+    }
+
+    /* カスタムスタイル（GitHubリポジトリから取得） */
+    /* ========================================
+   TECHSTAR - スタイルシート
+   Generated by SEO-mate Lite
+   ======================================== */
+
+:root {
+  --primary: #30a2e8;
+  --primary-dark: #2681b9;
+  --primary-light: #6ebdee;
+  --text: #1e293b;
+  --text-light: #64748b;
+  --bg: #ffffff;
+  --bg-alt: #f8fafc;
+  --border: #e2e8f0;
+}
+
+/* Reset & Base */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: var(--primary-dark);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ========================================
+   Header
+   ======================================== */
+.site-header {
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.site-logo {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.site-logo:hover {
+  color: var(--primary);
+}
+
+.site-nav {
+  display: flex;
+  gap: 25px;
+}
+
+.site-nav a {
+  color: var(--text-light);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.site-nav a:hover {
+  color: var(--primary);
+}
+
+/* Header Centered */
+.header-centered .container {
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* ========================================
+   Hero
+   ======================================== */
+.hero {
+  background: linear-gradient(135deg, #2681b9 0%, #30a2e8 100%);
+  color: white;
+  padding: 80px 0;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: clamp(28px, 5vw, 42px);
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 18px;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ========================================
+   Posts Grid
+   ======================================== */
+.posts-grid {
+  padding: 60px 0;
+}
+
+.posts-grid h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.posts-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.post-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.post-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.post-card-image {
+  width: 100%;
+  height: 180px;
+  background: var(--bg-alt);
+  object-fit: cover;
+}
+
+.post-card-content {
+  padding: 20px;
+}
+
+.post-card-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.post-card-title a {
+  color: var(--text);
+}
+
+.post-card-title a:hover {
+  color: var(--primary);
+}
+
+.post-card-meta {
+  font-size: 13px;
+  color: var(--text-light);
+}
+
+.no-posts {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--text-light);
+  background: var(--bg-alt);
+  border-radius: 12px;
+}
+
+/* ========================================
+   Article Page
+   ======================================== */
+.article-header {
+  background: linear-gradient(135deg, #2681b9 0%, #30a2e8 100%);
+  color: white;
+  padding: 60px 0 80px;
+  margin-bottom: -40px;
+}
+
+.article-header h1 {
+  font-size: clamp(24px, 4vw, 36px);
+  font-weight: 700;
+  line-height: 1.4;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.article-meta {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  opacity: 0.85;
+}
+
+.article-content {
+  max-width: 800px;
+  margin: 0 auto;
+  background: var(--bg);
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  padding: 50px;
+}
+
+@media (max-width: 640px) {
+  .article-content {
+    padding: 30px 20px;
+    border-radius: 0;
+  }
+}
+
+.article-content h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 50px 0 20px;
+  padding-bottom: 12px;
+  border-bottom: 3px solid var(--primary);
+}
+
+.article-content h2:first-child {
+  margin-top: 0;
+}
+
+.article-content h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 35px 0 15px;
+  padding-left: 15px;
+  border-left: 4px solid var(--primary);
+}
+
+.article-content p {
+  margin: 20px 0;
+}
+
+.article-content ul, .article-content ol {
+  margin: 20px 0;
+  padding-left: 25px;
+}
+
+.article-content li {
+  margin: 10px 0;
+}
+
+.article-content strong {
+  color: var(--primary-dark);
+  font-weight: 600;
+}
+
+.article-content blockquote {
+  background: var(--bg-alt);
+  border-left: 4px solid var(--primary);
+  padding: 20px 25px;
+  margin: 25px 0;
+  border-radius: 0 8px 8px 0;
+}
+
+.article-content code {
+  background: var(--bg-alt);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: 'SF Mono', Consolas, monospace;
+  font-size: 14px;
+}
+
+.article-content pre {
+  background: #1e293b;
+  color: #e2e8f0;
+  padding: 20px;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: 25px 0;
+}
+
+.article-content pre code {
+  background: transparent;
+  padding: 0;
+  color: inherit;
+}
+
+/* ========================================
+   Footer
+   ======================================== */
+.site-footer {
+  background: var(--bg-alt);
+  border-top: 1px solid var(--border);
+  padding: 40px 0;
+  margin-top: 60px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.copyright {
+  color: var(--text-light);
+  font-size: 14px;
+}
+
+.footer-social {
+  display: flex;
+  gap: 15px;
+}
+
+.footer-social a {
+  color: var(--text-light);
+  transition: color 0.2s;
+}
+
+.footer-social a:hover {
+  color: var(--primary);
+}
+
+/* Footer Detailed */
+.footer-detailed .footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+  margin-bottom: 30px;
+}
+
+.footer-detailed h4 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: var(--text);
+}
+
+.footer-detailed ul {
+  list-style: none;
+}
+
+.footer-detailed li {
+  margin: 8px 0;
+}
+
+.footer-detailed .footer-bottom {
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+
+/* ========================================
+   Utilities
+   ======================================== */
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: var(--primary);
+  width: 0%;
+  z-index: 1000;
+  transition: width 0.1s;
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* ========================================
+   Responsive
+   ======================================== */
+@media (max-width: 768px) {
+  .site-header .container {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .hero {
+    padding: 50px 0;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+
+  </style>
+</head>
+<body>
+  <div class="progress-bar" id="progressBar"></div>
+
+  <header>
+    <img src="https://source.unsplash.com/1200x630/?artificial%2Cintelligence" alt="バイブコーディング用語集｜知っておくべき50の専門用語を解説" class="hero-image" loading="eager">
+    <div class="hero-overlay">
+      <div class="container">
+        <!-- カスタムヘッダー（GitHubリポジトリから取得） -->
+        <header class="site-header header-centered">
+  <div class="container">
+    <a href="/" class="site-logo">TECHSTAR</a>
+    <nav class="site-nav">
+      <a href="/">Home</a>
+      <a href="/posts">Articles</a>
+      <a href="/about">About</a>
+    </nav>
+  </div>
+</header>
+        <h1>バイブコーディング用語集｜知っておくべき50の専門用語を解説</h1>
+        <div class="meta">
+          <time datetime="2025-11-28T01:32:39.165Z">2025年11月28日</time>
+        </div>
+      </div>
+      <div class="image-credit"><a href="https://unsplash.com" target="_blank" rel="noopener">Photo from Unsplash</a></div>
+    </div>
+  </header>
+
+  <main class="container">
+    <article>
+      <p>AI開発の現場で「バイブコーディング」という言葉を耳にする機会が増えてきました。しかし、関連する専門用語が多く、初めて学ぶ方にとっては理解のハードルが高いと感じることも少なくありません。この記事では、<strong>バイブコーディングの現場で実際に使われる50の専門用語</strong>を厳選し、初心者から中級者まで理解できるよう丁寧に解説します。AI開発に携わるすべての方に役立つ用語集として、ぜひご活用ください。</p>
+<h2>バイブコーディング用語集の基礎知識</h2>
+<p>バイブコーディングとは、AIとの対話を通じてプログラムを生成・改善していく開発手法のことです。従来のコーディングとは異なり、<span class="marker">自然言語でAIに指示を出しながら開発を進める</span>という特徴があります。</p>
+<p>この開発手法を効果的に活用するには、関連する専門用語の理解が不可欠です。用語を正しく理解することで、AIとのコミュニケーションがスムーズになり、開発効率が大幅に向上します。</p>
+<p><div class="point-box"> <p>バイブコーディングの専門用語は、大きく分けて「プロンプト関連」「AI技術関連」「開発手法関連」「評価・最適化関連」の4つのカテゴリに分類されます。それぞれのカテゴリを体系的に学ぶことで、全体像を把握しやすくなります。</p> </div></p>
+<h3>バイブコーディング用語を学ぶメリット</h3>
+<p>AI開発の専門用語を習得することには、以下のような具体的なメリットがあります。</p>
+<ul class="check-list">
+<ul>
+<li>AIツールとのコミュニケーション精度が向上する</li>
+<li>開発チーム内での意思疎通がスムーズになる</li>
+<li>技術文書や最新情報を正確に理解できる</li>
+<li>トラブルシューティングが効率的になる</li>
+<li>より高度な開発手法を習得できる</li>
+</ul>
+</ul>
+<h2>プロンプト設計に関する重要用語10選</h2>
+<p>プロンプトはバイブコーディングの核心となる要素です。ここでは、効果的なプロンプト設計に必要な用語を解説します。</p>
+<h3>1. プロンプト（Prompt）</h3>
+<p>AIに対して与える指示や質問のこと。<span class="marker-blue">プロンプトの品質が出力結果を大きく左右する</span>ため、バイブコーディングで最も重要な概念の一つです。</p>
+<p><strong>具体例：</strong> 「Pythonで顧客管理システムのデータベース接続部分を作成してください」</p>
+<h3>2. プロンプトエンジニアリング（Prompt Engineering）</h3>
+<p>AIから望ましい出力を得るために、プロンプトを最適化する技術。試行錯誤を重ねながら、より効果的な指示方法を見つけ出すプロセスを指します。</p>
+<h3>3. コンテキスト（Context）</h3>
+<p>AIに提供する背景情報や前提条件のこと。コンテキストを適切に設定することで、AIはより正確で文脈に合った回答を生成できます。</p>
+<p><div class="memo-box"> <p>コンテキストには「プロジェクトの目的」「使用技術」「制約条件」などを含めると効果的です。情報が多すぎると逆効果になることもあるため、必要最小限に絞ることがポイントです。</p> </div></p>
+<h3>4. ワンショット学習（One-shot Learning）</h3>
+<p>AIに1つの例を示して、その形式やパターンを学習させる手法。バイブコーディングでは、理想的な出力例を1つ示すことで、AIに期待する形式を理解させます。</p>
+<h3>5. フューショット学習（Few-shot Learning）</h3>
+<p>複数の例（通常2〜5個程度）を示して学習させる手法。ワンショット学習よりも<span class="marker">精度の高い出力が期待できる</span>ため、複雑な処理を実装する際に有効です。</p>
+<h3>6. ゼロショット学習（Zero-shot Learning）</h3>
+<p>例を示さずに、説明だけでタスクを実行させる手法。AIモデルの汎用性を活かした方法で、シンプルなタスクに適しています。</p>
+<h3>7. チェーン・オブ・ソート（Chain of Thought）</h3>
+<p>AIに段階的な思考プロセスを促す手法。「ステップバイステップで考えてください」といった指示により、論理的で正確な回答を引き出します。</p>
+<h3>8. システムプロンプト（System Prompt）</h3>
+<p>AIの役割や振る舞いを定義する基本的な指示。会話の最初に設定し、AIの全体的な動作をコントロールします。</p>
+<p><strong>具体例：</strong> 「あなたは10年の経験を持つPythonエキスパートです」</p>
+<h3>9. トークン（Token）</h3>
+<p>AIが処理するテキストの最小単位。日本語では1文字が複数トークンになることもあり、API使用料やコンテキスト長の制限に影響します。</p>
+<h3>10. コンテキストウィンドウ（Context Window）</h3>
+<p>AIが一度に処理できるテキストの最大量。モデルによって異なり、GPT-4では数万トークン、Claude 3では最大200Kトークンまで対応しています。</p>
+<p><div class="warning-box"> <p>コンテキストウィンドウを超えると、古い情報が削除されたり、エラーが発生したりします。長いコードを扱う際は、適切に分割して処理する必要があります。</p> </div></p>
+<h2>AI技術基盤に関する専門用語15選</h2>
+<p>バイブコーディングを支える技術的な基盤について理解することで、AIの能力と限界を把握できます。</p>
+<h3>11. LLM（Large Language Model / 大規模言語モデル）</h3>
+<p>膨大なテキストデータで学習された大規模なAIモデル。GPT-4、Claude、Geminiなどが代表例で、バイブコーディングの中核技術です。</p>
+<h3>12. トランスフォーマー（Transformer）</h3>
+<p>現代のLLMの基盤となるニューラルネットワークアーキテクチャ。テキストの文脈を効率的に理解する仕組みを持っています。</p>
+<h3>13. ファインチューニング（Fine-tuning）</h3>
+<p>既存のAIモデルを特定のタスクやドメインに合わせて追加学習させること。<span class="marker-green">専門分野に特化したAIを作成できる</span>強力な手法です。</p>
+<h3>14. ハルシネーション（Hallucination）</h3>
+<p>AIが事実ではない情報を、もっともらしく生成してしまう現象。バイブコーディングで<span class="marker-pink">特に注意すべき問題</span>の一つです。</p>
+<p><div class="point-box"> <p>ハルシネーション対策として、AIの出力を鵜呑みにせず、必ず検証することが重要です。特にセキュリティに関わる部分やデータ処理のロジックは、人間による確認が不可欠です。</p> </div></p>
+<h3>15. エンベディング（Embedding）</h3>
+<p>テキストや画像などのデータを数値ベクトルに変換する技術。意味的に類似したものが近い位置に配置されるため、検索や分類に活用されます。</p>
+<h3>16. ベクトルデータベース（Vector Database）</h3>
+<p>エンベディングされたデータを効率的に保存・検索するためのデータベース。PineconeやWeaviateなどが代表的です。</p>
+<h3>17. RAG（Retrieval-Augmented Generation）</h3>
+<p>外部の知識ベースから関連情報を検索し、それを基にAIが回答を生成する手法。ハルシネーションを減らし、最新情報に基づいた回答が可能になります。</p>
+<h3>18. API（Application Programming Interface）</h3>
+<p>異なるソフトウェア間でデータをやり取りするための仕組み。OpenAI APIやAnthropic APIなど、AI機能を利用するための窓口となります。</p>
+<h3>19. パラメータ（Parameter）</h3>
+<p>AIモデルの内部で調整される数値。パラメータ数が多いほど複雑なパターンを学習できますが、計算コストも増加します。</p>
+<h3>20. 推論（Inference）</h3>
+<p>学習済みのAIモデルを使って、新しい入力に対する出力を生成すること。バイブコーディングでコードを生成する過程は、この推論に該当します。</p>
+<h3>21. Temperature（温度パラメータ）</h3>
+<p>AIの出力のランダム性を制御するパラメータ。低い値（0.1〜0.3）では決定論的で一貫した出力、高い値（0.7〜1.0）では創造的で多様な出力になります。</p>
+<h3>22. Top-p（Nucleus Sampling）</h3>
+<p>AIが次の単語を選ぶ際の確率閾値。より柔軟な出力制御が可能で、Temperatureと組み合わせて使用されます。</p>
+<h3>23. トークン制限（Token Limit）</h3>
+<p>一度のリクエストで送受信できるトークンの最大数。入力と出力の合計が制限を超えないよう管理する必要があります。</p>
+<h3>24. レイテンシ（Latency）</h3>
+<p>AIがリクエストを受けてから応答を返すまでの時間。リアルタイム性が求められるアプリケーションでは重要な指標です。</p>
+<h3>25. モデル選択（Model Selection）</h3>
+<p>タスクに適したAIモデルを選ぶこと。コスト、速度、精度のバランスを考慮して、GPT-4、GPT-3.5、Claudeなどから選択します。</p>
+<table class="comparison-table">
+<tr><th>モデル</th><th>速度</th><th>精度</th><th>コスト</th><th>適用場面</th></tr>
+<tr><td>GPT-4</td><td class="bad">遅い</td><td class="good">高精度</td><td class="bad">高い</td><td>複雑な開発タスク</td></tr>
+<tr><td>GPT-3.5</td><td class="good">速い</td><td>標準</td><td class="good">安い</td><td>シンプルな処理</td></tr>
+<tr><td>Claude 3</td><td>標準</td><td class="good">高精度</td><td>中程度</td><td>長文コード生成</td></tr>
+</table>
+<h2>開発手法・ワークフローの用語15選</h2>
+<p>バイブコーディングを実践する上での具体的な手法やプロセスに関する用語を紹介します。</p>
+<h3>26. イテレーション（Iteration）</h3>
+<p>AIとの対話を繰り返しながら、コードを段階的に改善していくプロセス。<span class="marker">バイブコーディングの基本的なワークフロー</span>です。</p>
+<ol class="step-list">
+<ul>
+<li>初期プロンプトでベースコードを生成</li>
+<li>生成されたコードをレビューし、問題点を特定</li>
+<li>改善指示を出して再生成</li>
+<li>満足のいく結果が得られるまで繰り返す</li>
+</ul>
+</ol>
+<h3>27. インクリメンタル開発（Incremental Development）</h3>
+<p>機能を小さな単位に分割し、段階的に実装していく開発手法。AIの出力精度を保ちながら、複雑なシステムを構築できます。</p>
+<h3>28. コードレビュー（Code Review）</h3>
+<p>AIが生成したコードを人間が検証するプロセス。セキュリティ、パフォーマンス、保守性の観点から評価します。</p>
+<h3>29. リファクタリング（Refactoring）</h3>
+<p>既存のコードの動作を変えずに、内部構造を改善すること。AIに「このコードをリファクタリングしてください」と依頼することで実行できます。</p>
+<h3>30. デバッグ（Debugging）</h3>
+<p>コード内のエラーや不具合を見つけ、修正するプロセス。AIにエラーメッセージを提示することで、原因分析と修正案を得られます。</p>
+<h3>31. ペアプログラミング（Pair Programming）</h3>
+<p>AIを対話相手として、リアルタイムでコードを共同開発する手法。人間のアイデアとAIの実装力を組み合わせます。</p>
+<h3>32. スキャフォールディング（Scaffolding）</h3>
+<p>プロジェクトの基本構造やテンプレートを自動生成すること。AIに「Djangoプロジェクトの初期構造を作成」と指示することで実現できます。</p>
+<h3>33. ボイラープレートコード（Boilerplate Code）</h3>
+<p>繰り返し使用される定型的なコード。AIに生成させることで、開発時間を大幅に短縮できます。</p>
+<h3>34. コード補完（Code Completion）</h3>
+<p>部分的なコードから、続きを自動的に生成する機能。GitHub CopilotやTabnineなどのツールが代表的です。</p>
+<h3>35. ドキュメント生成（Documentation Generation）</h3>
+<p>コードからコメントやドキュメントを自動生成すること。「この関数にdocstringを追加してください」という指示で実現できます。</p>
+<h3>36. テスト駆動開発（TDD / Test-Driven Development）</h3>
+<p>テストコードを先に作成し、それをパスするコードを実装する手法。AIに「この関数のユニットテストを作成」と依頼することで実践できます。</p>
+<h3>37. コンテキスト保持（Context Preservation）</h3>
+<p>会話履歴を維持しながら開発を進める手法。前回の出力を参照しながら段階的に改善できます。</p>
+<h3>38. マルチターン対話（Multi-turn Conversation）</h3>
+<p>複数回のやり取りを通じて、要件を明確化しながら開発を進める手法。複雑な要件を段階的に伝えることができます。</p>
+<h3>39. コード変換（Code Translation）</h3>
+<p>ある言語で書かれたコードを別の言語に変換すること。「このJavaScriptコードをPythonに変換してください」といった指示で実行できます。</p>
+<h3>40. スニペット生成（Snippet Generation）</h3>
+<p>特定の機能を実現する小さなコード断片を生成すること。頻繁に使う処理パターンをすぐに取得できます。</p>
+<p><div class="memo-box"> <p>効率的なバイブコーディングには、自分の開発スタイルに合った用語と手法を組み合わせることが重要です。すべての手法を使う必要はなく、状況に応じて選択しましょう。</p> </div></p>
+<h2>評価・最適化に関する用語10選</h2>
+<p>AIの出力品質を評価し、改善するための専門用語を解説します。</p>
+<h3>41. プロンプトチューニング（Prompt Tuning）</h3>
+<p>同じ目的でも、異なる表現のプロンプトを試して、最適なものを見つけるプロセス。<span class="marker-blue">出力品質を大きく向上させる</span>重要な作業です。</p>
+<h3>42. A/Bテスト（A/B Testing）</h3>
+<p>2つの異なるプロンプトやアプローチを比較して、どちらがより良い結果を生むか検証すること。データに基づいた改善が可能になります。</p>
+<h3>43. コスト最適化（Cost Optimization）</h3>
+<p>API使用料を抑えながら、必要な品質を維持する工夫。適切なモデル選択やトークン削減が鍵となります。</p>
+<ul class="check-list">
+<ul>
+<li>シンプルなタスクには低コストモデルを使用</li>
+<li>不要なコンテキストを削除してトークン数を削減</li>
+<li>キャッシュ機能を活用して重複リクエストを避ける</li>
+<li>バッチ処理で効率化する</li>
+</ul>
+</ul>
+<h3>44. レスポンス検証（Response Validation）</h3>
+<p>AIの出力が期待通りか自動的にチェックする仕組み。構文チェック、型チェック、ロジックチェックなどが含まれます。</p>
+<h3>45. エラーハンドリング（Error Handling）</h3>
+<p>AIの出力エラーや予期しない応答に対処する仕組み。リトライロジックやフォールバック処理を実装します。</p>
+<h3>46. ベンチマーク（Benchmark）</h3>
+<p>AIの性能を測定するための標準的なテストセット。異なるモデルやプロンプトの比較に使用します。</p>
+<h3>47. メタプロンプティング（Meta-prompting）</h3>
+<p>AIにプロンプト自体を改善させる高度な手法。「このプロンプトをより効果的にしてください」という指示で実現できます。</p>
+<h3>48. チェーンプロンプティング（Chain Prompting）</h3>
+<p>複数のプロンプトを連鎖させ、前の出力を次の入力として使用する手法。複雑なタスクを段階的に処理できます。</p>
+<h3>49. 品質スコアリング（Quality Scoring）</h3>
+<p>生成されたコードの品質を数値化して評価すること。可読性、効率性、保守性などの指標を使用します。</p>
+<h3>50. フィードバックループ（Feedback Loop）</h3>
+<p>AIの出力を評価し、その結果を次のプロンプト改善に活かす継続的な改善サイクル。バイブコーディングの上達に不可欠なプロセスです。</p>
+<p><div class="point-box"> <p>評価と最適化は、バイブコーディングの成熟度を高める重要なステップです。初めは基本的な用語から習得し、徐々に高度な最適化手法に取り組むことをおすすめします。</p> </div></p>
+<h2>バイブコーディング用語を効果的に学ぶ方法</h2>
+<p>専門用語を効率的に習得するための実践的なアプローチを紹介します。</p>
+<h3>段階的学習のステップ</h3>
+<p>バイブコーディングの用語は、一度にすべて覚える必要はありません。以下の段階で学習を進めましょう。</p>
+<p><strong>初級レベル（最初の1週間）</strong></p>
+<ul>
+<li>プロンプト、コンテキスト、LLM、ハルシネーション、イテレーション</li>
+<li>これらの5つの用語を実際に使いながら理解する</li>
+</ul>
+<p><strong>中級レベル（2〜4週間目）</strong></p>
+<ul>
+<li>プロンプトエンジニアリング、RAG、リファクタリング、コードレビュー</li>
+<li>より効率的な開発手法を実践する</li>
+</ul>
+<p><strong>上級レベル（1ヶ月以降）</strong></p>
+<ul>
+<li>メタプロンプティング、チェーンプロンプティング、最適化関連用語</li>
+<li>高度なテクニックで開発品質を向上させる</li>
+</ul>
+<h3>実践的な学習方法</h3>
+<ol class="step-list">
+<ul>
+<li>実際のプロジェクトで1日1つの用語を意識して使う</li>
+<li>AIツールのドキュメントを読んで用語の使用例を確認</li>
+<li>開発者コミュニティで用語を使って質問や議論をする</li>
+<li>自分なりの用語集ノートを作成し、実例を記録する</li>
+</ul>
+</ol>
+<p><div class="warning-box"> <p>用語を暗記するだけでは実務では役立ちません。実際の開発シーンで使いながら、体験的に理解を深めることが最も効果的です。</p> </div></p>
+<h2>よくある質問</h2>
+<p><div class="qa-box"> <div class="qa-question"> <span class="qa-label">Q</span> <span class="qa-text">バイブコーディングの用語は英語で覚えるべきですか、それとも日本語で十分ですか？</span> </div> <div class="qa-answer"> <span class="qa-label">A</span> <span class="qa-text">英語の原語を理解した上で、日本語でも説明できる状態が理想的です。技術文書や公式ドキュメントは英語が多いため、英語の用語を知っていると情報収集がスムーズになります。ただし、チーム内のコミュニケーションでは、日本語の用語を使った方が伝わりやすい場合もあります。</span> </div> </div></p>
+<p><div class="qa-box"> <div class="qa-question"> <span class="qa-label">Q</span> <span class="qa-text">初心者が最初に覚えるべき用語は何ですか？</span> </div> <div class="qa-answer"> <span class="qa-label">A</span> <span class="qa-text">「プロンプト」「コンテキスト」「ハルシネーション」の3つを最優先で理解しましょう。これらはバイブコーディングの基礎中の基礎で、AIとの対話の質を左右する重要な概念です。この3つを理解すれば、他の用語も自然と理解しやすくなります。</span> </div> </div></p>
+<p><div class="qa-box"> <div class="qa-question"> <span class="qa-label">Q</span> <span class="qa-text">用語を覚えるだけでバイブコーディングのスキルは向上しますか？</span> </div> <div class="qa-answer"> <span class="qa-label">A</span> <span class="qa-text">用語の理解は必要条件ですが、十分条件ではありません。実際にAIツールを使ってコードを生成し、試行錯誤する実践経験が最も重要です。用語を「知っている」状態から「使いこなせる」状態に移行することで、真のスキル向上につながります。</span> </div> </div></p>
+<p><div class="qa-box"> <div class="qa-question"> <span class="qa-label">Q</span> <span class="qa-text">技術の進化が速いですが、今覚えた用語は将来も使えますか？</span> </div> <div class="qa-answer"> <span class="qa-label">A</span> <span class="qa-text">プロンプト、コンテキスト、LLMなどの基本的な用語は、今後も長く使われる可能性が高いです。一方で、特定のツールや手法に関する用語は変化することもあります。基礎的な概念をしっかり理解しておけば、新しい用語が登場しても対応しやすくなります。</span> </div> </div></p>
+<h2>まとめ：バイブコーディング用語を武器にする</h2>
+<p>この記事では、バイブコーディングに関する50の専門用語を、プロンプト設計、AI技術基盤、開発手法、評価・最適化の4つのカテゴリに分けて解説しました。</p>
+<p><div class="point-box"> <p><strong>重要ポイントのおさらい</strong></p></p>
+<ul>
+<ul>
+<li>用語の理解は、AIとの効果的なコミュニケーションの基盤</li>
+<li>初級から上級まで段階的に学習することで、無理なく習得できる</li>
+<li>暗記ではなく、実践を通じた体験的な理解が重要</li>
+<li>基本的な用語を押さえれば、新しい概念も理解しやすくなる</li>
+</ul>
+</ul>
+<p></div></p>
+<p>バイブコーディングの専門用語は、単なる知識ではなく、開発効率を高めるための実践的なツールです。<span class="marker">まずは日常的に使う5〜10個の用語から習得を始め</span>、徐々にレパートリーを広げていきましょう。</p>
+<p><span class="badge badge-primary">今日から実践</span> この記事をブックマークして、新しい用語に出会ったときの参照用として活用してください。実際のプロジェクトで用語を使いながら開発を進めることで、自然とバイブコーディングのスキルが向上していきます。</p>
+<p>継続的な学習と実践を通じて、あなたもバイブコーディングのエキスパートへと成長できるでしょう。AI開発の未来を切り拓く第一歩として、ぜひこの用語集を活用してください。</p>
+
+      <div class="share-buttons">
+        <a href="https://twitter.com/intent/tweet?text=%E3%83%90%E3%82%A4%E3%83%96%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E7%94%A8%E8%AA%9E%E9%9B%86%EF%BD%9C%E7%9F%A5%E3%81%A3%E3%81%A6%E3%81%8A%E3%81%8F%E3%81%B9%E3%81%8D50%E3%81%AE%E5%B0%82%E9%96%80%E7%94%A8%E8%AA%9E%E3%82%92%E8%A7%A3%E8%AA%AC&url=" class="share-btn twitter" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          Post
+        </a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=" class="share-btn facebook" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          Share
+        </a>
+        <a href="https://line.me/R/msg/text/?%E3%83%90%E3%82%A4%E3%83%96%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E7%94%A8%E8%AA%9E%E9%9B%86%EF%BD%9C%E7%9F%A5%E3%81%A3%E3%81%A6%E3%81%8A%E3%81%8F%E3%81%B9%E3%81%8D50%E3%81%AE%E5%B0%82%E9%96%80%E7%94%A8%E8%AA%9E%E3%82%92%E8%A7%A3%E8%AA%AC%0D%0A" class="share-btn line" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+          LINE
+        </a>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="container">
+      <!-- カスタムフッター（GitHubリポジトリから取得） -->
+      <footer class="site-footer footer-detailed">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <h4>TECHSTAR</h4>
+        <p>主にAI×開発関係に役立つ情報発信をしていきます。合同会社リバイラルの運営メディアです。</p>
+      </div>
+      <div class="footer-links">
+        <h4>Links</h4>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/posts">Articles</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="mailto:info@revirall.jp">Contact</a></li>
+        </ul>
+      </div>
+      
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 合同会社リバイラル All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="ページトップへ戻る">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <script>
+    // Reading Progress Bar
+    window.addEventListener('scroll', () => {
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      document.getElementById('progressBar').style.width = scrolled + '%';
+
+      // Back to Top Button
+      const backToTop = document.getElementById('backToTop');
+      if (winScroll > 300) {
+        backToTop.classList.add('visible');
+      } else {
+        backToTop.classList.remove('visible');
+      }
+    });
+
+    // Back to Top Click
+    document.getElementById('backToTop').addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+
+    // カスタムスクリプト（GitHubリポジトリから取得）
+    // ========================================
+// SEO-mate Lite - Main JavaScript
+// ========================================
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Reading Progress Bar
+  const progressBar = document.querySelector('.progress-bar');
+  if (progressBar) {
+    window.addEventListener('scroll', function() {
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      progressBar.style.width = scrolled + '%';
+    });
+  }
+
+  // Back to Top Button
+  const backToTop = document.querySelector('.back-to-top');
+  if (backToTop) {
+    window.addEventListener('scroll', function() {
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      if (winScroll > 300) {
+        backToTop.classList.add('visible');
+      } else {
+        backToTop.classList.remove('visible');
+      }
+    });
+
+    backToTop.addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+
+  // Mobile Navigation Toggle
+  const navToggle = document.querySelector('.nav-toggle');
+  const siteNav = document.querySelector('.site-nav');
+  if (navToggle && siteNav) {
+    navToggle.addEventListener('click', function() {
+      siteNav.classList.toggle('active');
+    });
+  }
+});
+
+
+  </script>
+</body>
+</html>
