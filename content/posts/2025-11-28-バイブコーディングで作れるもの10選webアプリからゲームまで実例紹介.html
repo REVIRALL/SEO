@@ -1,0 +1,1787 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="バイブコーディングの実例を10種類紹介。Webアプリ、ゲーム、業務ツールなど、初心者でも作れるアプリ開発の具体例と作り方のコツを徹底解説します。">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="バイブコーディングで作れるもの10選｜Webアプリからゲームまで実例紹介">
+  <meta property="og:description" content="バイブコーディングの実例を10種類紹介。Webアプリ、ゲーム、業務ツールなど、初心者でも作れるアプリ開発の具体例と作り方のコツを徹底解説します。">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://source.unsplash.com/1200x630/?app%2Cmobile">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="バイブコーディングで作れるもの10選｜Webアプリからゲームまで実例紹介">
+  <meta name="twitter:description" content="バイブコーディングの実例を10種類紹介。Webアプリ、ゲーム、業務ツールなど、初心者でも作れるアプリ開発の具体例と作り方のコツを徹底解説します。">
+  <meta name="twitter:image" content="https://source.unsplash.com/1200x630/?app%2Cmobile">
+  <title>バイブコーディングで作れるもの10選｜Webアプリからゲームまで実例紹介</title>
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --text: #1e293b;
+      --text-light: #64748b;
+      --bg: #ffffff;
+      --bg-alt: #f8fafc;
+      --border: #e2e8f0;
+      --success: #10b981;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+      font-size: 16px;
+      line-height: 1.8;
+      color: var(--text);
+      background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header with Hero Image */
+    header {
+      position: relative;
+      color: white;
+      padding: 0;
+      margin-bottom: 0;
+      overflow: hidden;
+    }
+
+    .hero-image {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(to bottom, rgba(30, 58, 95, 0.3) 0%, rgba(30, 58, 95, 0.85) 70%, rgba(30, 58, 95, 0.95) 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 40px 20px;
+    }
+
+    header .container {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .site-name {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      opacity: 0.9;
+      margin-bottom: 15px;
+    }
+
+    header h1 {
+      font-size: clamp(22px, 4.5vw, 32px);
+      font-weight: 700;
+      line-height: 1.5;
+      letter-spacing: -0.3px;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+      margin-bottom: 15px;
+    }
+
+    .meta {
+      font-size: 14px;
+      opacity: 0.85;
+    }
+
+    .image-credit {
+      position: absolute;
+      bottom: 10px;
+      right: 15px;
+      font-size: 11px;
+      opacity: 0.6;
+    }
+
+    .image-credit a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .image-credit a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 640px) {
+      .hero-image {
+        height: 300px;
+      }
+
+      .hero-overlay {
+        padding: 30px 15px;
+      }
+
+      header h1 {
+        font-size: 20px;
+      }
+    }
+
+    /* Article */
+    article {
+      background: var(--bg);
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      padding: 50px;
+      margin-top: 40px;
+      margin-bottom: 40px;
+    }
+
+    @media (max-width: 640px) {
+      article {
+        padding: 30px 20px;
+        border-radius: 0;
+        margin: 0 -20px 40px;
+      }
+    }
+
+    article h2 {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--text);
+      margin: 50px 0 20px;
+      padding-bottom: 12px;
+      border-bottom: 3px solid var(--primary);
+      letter-spacing: -0.3px;
+    }
+
+    article h2:first-child {
+      margin-top: 0;
+    }
+
+    article h3 {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--text);
+      margin: 35px 0 15px;
+      padding-left: 15px;
+      border-left: 4px solid var(--primary);
+    }
+
+    article p {
+      margin: 20px 0;
+      text-align: justify;
+    }
+
+    article ul, article ol {
+      margin: 20px 0;
+      padding-left: 25px;
+    }
+
+    article li {
+      margin: 10px 0;
+    }
+
+    article strong {
+      color: var(--primary-dark);
+      font-weight: 600;
+    }
+
+    article a {
+      color: var(--primary);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+
+    article a:hover {
+      border-bottom-color: var(--primary);
+    }
+
+    /* Blockquote */
+    article blockquote {
+      background: var(--bg-alt);
+      border-left: 4px solid var(--primary);
+      padding: 20px 25px;
+      margin: 25px 0;
+      border-radius: 0 8px 8px 0;
+    }
+
+    /* Table */
+    article table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 25px 0;
+      font-size: 15px;
+    }
+
+    article th, article td {
+      padding: 12px 15px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+
+    article th {
+      background: var(--bg-alt);
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    article tr:hover {
+      background: var(--bg-alt);
+    }
+
+    /* Code */
+    article code {
+      background: var(--bg-alt);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: 'SF Mono', Consolas, monospace;
+      font-size: 14px;
+    }
+
+    article pre {
+      background: #1e293b;
+      color: #e2e8f0;
+      padding: 20px;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 25px 0;
+    }
+
+    article pre code {
+      background: transparent;
+      padding: 0;
+      color: inherit;
+    }
+
+    /* CTA Box */
+    .cta-box {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: white;
+      padding: 30px;
+      border-radius: 12px;
+      margin: 40px 0;
+      text-align: center;
+    }
+
+    .cta-box h3 {
+      color: white;
+      border: none;
+      padding: 0;
+      margin: 0 0 15px;
+    }
+
+    .cta-box p {
+      margin: 0 0 20px;
+      opacity: 0.95;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: white;
+      color: var(--primary-dark);
+      padding: 12px 30px;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Footer */
+    footer {
+      background: var(--bg-alt);
+      padding: 40px 0;
+      text-align: center;
+      color: var(--text-light);
+      font-size: 14px;
+      border-top: 1px solid var(--border);
+    }
+
+    footer a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    /* Reading Progress */
+    .progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      background: var(--primary);
+      width: 0%;
+      z-index: 1000;
+      transition: width 0.1s;
+    }
+
+    /* Back to Top */
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s;
+      box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .back-to-top:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(37, 99, 235, 0.5);
+    }
+
+    /* TOC */
+    .toc {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 25px 30px;
+      margin: 30px 0;
+    }
+
+    .toc h4 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 15px;
+      color: var(--text);
+    }
+
+    .toc ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .toc li {
+      margin: 8px 0;
+    }
+
+    .toc a {
+      color: var(--text-light);
+      text-decoration: none;
+      font-size: 15px;
+      transition: color 0.2s;
+    }
+
+    .toc a:hover {
+      color: var(--primary);
+    }
+
+    /* Share */
+    .share-buttons {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin: 30px 0;
+    }
+
+    .share-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      color: white;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .share-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .share-btn.twitter {
+      background: #1da1f2;
+    }
+
+    .share-btn.facebook {
+      background: #1877f2;
+    }
+
+    .share-btn.line {
+      background: #00c300;
+    }
+
+    /* ========================================
+       SEO強化・視認性向上コンポーネント
+       ======================================== */
+
+    /* マーカー（蛍光ペン風下線） */
+    .marker {
+      background: linear-gradient(transparent 60%, #fef08a 60%);
+      padding: 0 2px;
+    }
+
+    .marker-pink {
+      background: linear-gradient(transparent 60%, #fbcfe8 60%);
+    }
+
+    .marker-green {
+      background: linear-gradient(transparent 60%, #bbf7d0 60%);
+    }
+
+    .marker-blue {
+      background: linear-gradient(transparent 60%, #bfdbfe 60%);
+    }
+
+    /* 下線強調 */
+    .underline {
+      border-bottom: 2px solid var(--primary);
+      padding-bottom: 2px;
+    }
+
+    .underline-wavy {
+      text-decoration: underline wavy var(--primary);
+      text-underline-offset: 4px;
+    }
+
+    /* 吹き出し（左） */
+    .balloon {
+      position: relative;
+      display: inline-block;
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 15px 20px;
+      margin: 20px 0 20px 50px;
+    }
+
+    .balloon::before {
+      content: '';
+      position: absolute;
+      left: -10px;
+      top: 15px;
+      border: 10px solid transparent;
+      border-right-color: var(--border);
+    }
+
+    .balloon::after {
+      content: '';
+      position: absolute;
+      left: -8px;
+      top: 15px;
+      border: 10px solid transparent;
+      border-right-color: var(--bg-alt);
+    }
+
+    .balloon-icon {
+      position: absolute;
+      left: -50px;
+      top: 5px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    /* 吹き出し（右・回答風） */
+    .balloon-right {
+      margin: 20px 50px 20px 0;
+      background: #e0f2fe;
+      border-color: #7dd3fc;
+    }
+
+    .balloon-right::before {
+      left: auto;
+      right: -10px;
+      border-right-color: transparent;
+      border-left-color: #7dd3fc;
+    }
+
+    .balloon-right::after {
+      left: auto;
+      right: -8px;
+      border-right-color: transparent;
+      border-left-color: #e0f2fe;
+    }
+
+    .balloon-right .balloon-icon {
+      left: auto;
+      right: -50px;
+      background: #0ea5e9;
+    }
+
+    /* ポイントボックス */
+    .point-box {
+      background: #fffbeb;
+      border: 1px solid #fbbf24;
+      border-radius: 12px;
+      padding: 20px 25px;
+      margin: 25px 0;
+      position: relative;
+    }
+
+    .point-box::before {
+      content: 'POINT';
+      position: absolute;
+      top: -12px;
+      left: 20px;
+      background: #fbbf24;
+      color: white;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 4px;
+      letter-spacing: 1px;
+    }
+
+    .point-box p:first-child {
+      margin-top: 5px;
+    }
+
+    /* 注意ボックス */
+    .warning-box {
+      background: #fef2f2;
+      border: 1px solid #fca5a5;
+      border-radius: 12px;
+      padding: 20px 25px;
+      margin: 25px 0;
+      position: relative;
+    }
+
+    .warning-box::before {
+      content: 'WARNING';
+      position: absolute;
+      top: -12px;
+      left: 20px;
+      background: #ef4444;
+      color: white;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 4px;
+      letter-spacing: 1px;
+    }
+
+    /* メモボックス */
+    .memo-box {
+      background: #f0fdf4;
+      border: 1px solid #86efac;
+      border-radius: 12px;
+      padding: 20px 25px;
+      margin: 25px 0;
+      position: relative;
+    }
+
+    .memo-box::before {
+      content: 'MEMO';
+      position: absolute;
+      top: -12px;
+      left: 20px;
+      background: #22c55e;
+      color: white;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 4px;
+      letter-spacing: 1px;
+    }
+
+    /* チェックリスト */
+    .check-list {
+      list-style: none;
+      padding: 0;
+      margin: 25px 0;
+    }
+
+    .check-list li {
+      position: relative;
+      padding-left: 30px;
+      margin: 12px 0;
+    }
+
+    .check-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 4px;
+      width: 20px;
+      height: 20px;
+      background: var(--success);
+      border-radius: 50%;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E");
+      background-size: 14px;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    /* ステップリスト */
+    .step-list {
+      list-style: none;
+      padding: 0;
+      margin: 25px 0;
+      counter-reset: step-counter;
+    }
+
+    .step-list li {
+      position: relative;
+      padding-left: 50px;
+      margin: 20px 0;
+      min-height: 40px;
+    }
+
+    .step-list li::before {
+      counter-increment: step-counter;
+      content: 'STEP ' counter(step-counter);
+      position: absolute;
+      left: 0;
+      top: 0;
+      background: var(--primary);
+      color: white;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 4px 8px;
+      border-radius: 4px;
+      letter-spacing: 0.5px;
+    }
+
+    /* Q&A */
+    .qa-box {
+      margin: 30px 0;
+    }
+
+    .qa-question {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      margin-bottom: 15px;
+    }
+
+    .qa-answer {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      padding-left: 20px;
+    }
+
+    .qa-label {
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 16px;
+    }
+
+    .qa-question .qa-label {
+      background: #ef4444;
+      color: white;
+    }
+
+    .qa-answer .qa-label {
+      background: #3b82f6;
+      color: white;
+    }
+
+    .qa-text {
+      flex: 1;
+      padding-top: 4px;
+    }
+
+    /* 比較テーブル */
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 25px 0;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .comparison-table th {
+      background: var(--primary);
+      color: white;
+      padding: 15px;
+      font-weight: 600;
+    }
+
+    .comparison-table td {
+      padding: 15px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .comparison-table tr:nth-child(even) {
+      background: var(--bg-alt);
+    }
+
+    .comparison-table .good {
+      color: #16a34a;
+      font-weight: 600;
+    }
+
+    .comparison-table .bad {
+      color: #dc2626;
+      font-weight: 600;
+    }
+
+    /* バッジ */
+    .badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    .badge-primary {
+      background: var(--primary);
+      color: white;
+    }
+
+    .badge-success {
+      background: var(--success);
+      color: white;
+    }
+
+    .badge-warning {
+      background: #f59e0b;
+      color: white;
+    }
+
+    .badge-danger {
+      background: #ef4444;
+      color: white;
+    }
+
+    .badge-outline {
+      background: transparent;
+      border: 1px solid var(--primary);
+      color: var(--primary);
+    }
+
+    /* 引用ボックス（人物付き） */
+    .quote-box {
+      background: var(--bg-alt);
+      border-radius: 12px;
+      padding: 25px;
+      margin: 25px 0;
+      position: relative;
+    }
+
+    .quote-box::before {
+      content: '"';
+      position: absolute;
+      top: -10px;
+      left: 20px;
+      font-size: 60px;
+      color: var(--primary);
+      opacity: 0.3;
+      font-family: Georgia, serif;
+      line-height: 1;
+    }
+
+    .quote-box p {
+      font-style: italic;
+      padding-left: 30px;
+      margin: 0;
+    }
+
+    .quote-box cite {
+      display: block;
+      text-align: right;
+      margin-top: 15px;
+      font-style: normal;
+      color: var(--text-light);
+      font-size: 14px;
+    }
+
+    /* 関連記事ボックス */
+    .related-box {
+      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+      border-radius: 12px;
+      padding: 20px 25px;
+      margin: 25px 0;
+    }
+
+    .related-box h4 {
+      font-size: 14px;
+      color: var(--text-light);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .related-box h4::before {
+      content: '';
+      width: 16px;
+      height: 16px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2364748b'%3E%3Cpath d='M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z'/%3E%3C/svg%3E");
+    }
+
+    .related-box a {
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    /* キーワードハイライト */
+    .keyword {
+      background: #dbeafe;
+      color: var(--primary-dark);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-weight: 500;
+    }
+
+    /* 数字ハイライト */
+    .number-highlight {
+      font-size: 1.5em;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    /* アコーディオン */
+    .accordion {
+      margin: 20px 0;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .accordion-header {
+      background: var(--bg-alt);
+      padding: 15px 20px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.2s;
+    }
+
+    .accordion-header:hover {
+      background: var(--border);
+    }
+
+    .accordion-header::after {
+      content: '+';
+      font-size: 20px;
+      color: var(--text-light);
+    }
+
+    .accordion.open .accordion-header::after {
+      content: '-';
+    }
+
+    .accordion-content {
+      padding: 0 20px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s, padding 0.3s;
+    }
+
+    .accordion.open .accordion-content {
+      padding: 20px;
+      max-height: 500px;
+    }
+
+    /* タイムライン */
+    .timeline {
+      position: relative;
+      padding-left: 30px;
+      margin: 25px 0;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 8px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--border);
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-bottom: 25px;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -26px;
+      top: 5px;
+      width: 12px;
+      height: 12px;
+      background: var(--primary);
+      border-radius: 50%;
+      border: 2px solid white;
+      box-shadow: 0 0 0 2px var(--primary);
+    }
+
+    .timeline-date {
+      font-size: 13px;
+      color: var(--text-light);
+      margin-bottom: 5px;
+    }
+
+    .timeline-content {
+      font-weight: 500;
+    }
+
+    /* プログレスバー */
+    .progress-indicator {
+      margin: 20px 0;
+    }
+
+    .progress-indicator-label {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+
+    .progress-indicator-bar {
+      height: 8px;
+      background: var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .progress-indicator-fill {
+      height: 100%;
+      background: var(--primary);
+      border-radius: 4px;
+      transition: width 0.3s;
+    }
+
+    /* 評価スター */
+    .rating {
+      display: inline-flex;
+      gap: 4px;
+      color: #fbbf24;
+      font-size: 20px;
+    }
+
+    .rating-empty {
+      color: var(--border);
+    }
+
+    /* カスタムスタイル（GitHubリポジトリから取得） */
+    /* ========================================
+   TECHSTAR - スタイルシート
+   Generated by SEO-mate Lite
+   ======================================== */
+
+:root {
+  --primary: #30a2e8;
+  --primary-dark: #2681b9;
+  --primary-light: #6ebdee;
+  --text: #1e293b;
+  --text-light: #64748b;
+  --bg: #ffffff;
+  --bg-alt: #f8fafc;
+  --border: #e2e8f0;
+}
+
+/* Reset & Base */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: var(--primary-dark);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ========================================
+   Header
+   ======================================== */
+.site-header {
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.site-logo {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.site-logo:hover {
+  color: var(--primary);
+}
+
+.site-nav {
+  display: flex;
+  gap: 25px;
+}
+
+.site-nav a {
+  color: var(--text-light);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.site-nav a:hover {
+  color: var(--primary);
+}
+
+/* Header Centered */
+.header-centered .container {
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* ========================================
+   Hero
+   ======================================== */
+.hero {
+  background: linear-gradient(135deg, #2681b9 0%, #30a2e8 100%);
+  color: white;
+  padding: 80px 0;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: clamp(28px, 5vw, 42px);
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 18px;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ========================================
+   Posts Grid
+   ======================================== */
+.posts-grid {
+  padding: 60px 0;
+}
+
+.posts-grid h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.posts-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.post-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.post-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.post-card-image {
+  width: 100%;
+  height: 180px;
+  background: var(--bg-alt);
+  object-fit: cover;
+}
+
+.post-card-content {
+  padding: 20px;
+}
+
+.post-card-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.post-card-title a {
+  color: var(--text);
+}
+
+.post-card-title a:hover {
+  color: var(--primary);
+}
+
+.post-card-meta {
+  font-size: 13px;
+  color: var(--text-light);
+}
+
+.no-posts {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--text-light);
+  background: var(--bg-alt);
+  border-radius: 12px;
+}
+
+/* ========================================
+   Article Page
+   ======================================== */
+.article-header {
+  background: linear-gradient(135deg, #2681b9 0%, #30a2e8 100%);
+  color: white;
+  padding: 60px 0 80px;
+  margin-bottom: -40px;
+}
+
+.article-header h1 {
+  font-size: clamp(24px, 4vw, 36px);
+  font-weight: 700;
+  line-height: 1.4;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.article-meta {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  opacity: 0.85;
+}
+
+.article-content {
+  max-width: 800px;
+  margin: 0 auto;
+  background: var(--bg);
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  padding: 50px;
+}
+
+@media (max-width: 640px) {
+  .article-content {
+    padding: 30px 20px;
+    border-radius: 0;
+  }
+}
+
+.article-content h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 50px 0 20px;
+  padding-bottom: 12px;
+  border-bottom: 3px solid var(--primary);
+}
+
+.article-content h2:first-child {
+  margin-top: 0;
+}
+
+.article-content h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 35px 0 15px;
+  padding-left: 15px;
+  border-left: 4px solid var(--primary);
+}
+
+.article-content p {
+  margin: 20px 0;
+}
+
+.article-content ul, .article-content ol {
+  margin: 20px 0;
+  padding-left: 25px;
+}
+
+.article-content li {
+  margin: 10px 0;
+}
+
+.article-content strong {
+  color: var(--primary-dark);
+  font-weight: 600;
+}
+
+.article-content blockquote {
+  background: var(--bg-alt);
+  border-left: 4px solid var(--primary);
+  padding: 20px 25px;
+  margin: 25px 0;
+  border-radius: 0 8px 8px 0;
+}
+
+.article-content code {
+  background: var(--bg-alt);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: 'SF Mono', Consolas, monospace;
+  font-size: 14px;
+}
+
+.article-content pre {
+  background: #1e293b;
+  color: #e2e8f0;
+  padding: 20px;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: 25px 0;
+}
+
+.article-content pre code {
+  background: transparent;
+  padding: 0;
+  color: inherit;
+}
+
+/* ========================================
+   Footer
+   ======================================== */
+.site-footer {
+  background: var(--bg-alt);
+  border-top: 1px solid var(--border);
+  padding: 40px 0;
+  margin-top: 60px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.copyright {
+  color: var(--text-light);
+  font-size: 14px;
+}
+
+.footer-social {
+  display: flex;
+  gap: 15px;
+}
+
+.footer-social a {
+  color: var(--text-light);
+  transition: color 0.2s;
+}
+
+.footer-social a:hover {
+  color: var(--primary);
+}
+
+/* Footer Detailed */
+.footer-detailed .footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+  margin-bottom: 30px;
+}
+
+.footer-detailed h4 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: var(--text);
+}
+
+.footer-detailed ul {
+  list-style: none;
+}
+
+.footer-detailed li {
+  margin: 8px 0;
+}
+
+.footer-detailed .footer-bottom {
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+
+/* ========================================
+   Utilities
+   ======================================== */
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: var(--primary);
+  width: 0%;
+  z-index: 1000;
+  transition: width 0.1s;
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* ========================================
+   Responsive
+   ======================================== */
+@media (max-width: 768px) {
+  .site-header .container {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .hero {
+    padding: 50px 0;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+
+  </style>
+</head>
+<body>
+  <div class="progress-bar" id="progressBar"></div>
+
+  <header>
+    <img src="https://source.unsplash.com/1200x630/?app%2Cmobile" alt="バイブコーディングで作れるもの10選｜Webアプリからゲームまで実例紹介" class="hero-image" loading="eager">
+    <div class="hero-overlay">
+      <div class="container">
+        <!-- カスタムヘッダー（GitHubリポジトリから取得） -->
+        <header class="site-header header-centered">
+  <div class="container">
+    <a href="/" class="site-logo">TECHSTAR</a>
+    <nav class="site-nav">
+      <a href="/">Home</a>
+      <a href="/posts">Articles</a>
+      <a href="/about">About</a>
+    </nav>
+  </div>
+</header>
+        <h1>バイブコーディングで作れるもの10選｜Webアプリからゲームまで実例紹介</h1>
+        <div class="meta">
+          <time datetime="2025-11-28T01:28:16.139Z">2025年11月28日</time>
+        </div>
+      </div>
+      <div class="image-credit"><a href="https://unsplash.com" target="_blank" rel="noopener">Photo from Unsplash</a></div>
+    </div>
+  </header>
+
+  <main class="container">
+    <article>
+      <p>プログラミング学習を始めたばかりで「本当に自分でアプリが作れるのだろうか」と不安に感じていませんか。バイブコーディングは、初心者でも実用的なアプリケーションを開発できる効率的な学習手法として注目されています。この記事では、<strong>バイブコーディングで実際に作れるもの10選</strong>を具体的な実例とともに紹介します。Webアプリからゲームまで、あなたの学習目的に合った作品づくりのヒントが見つかるはずです。</p>
+<h2>バイブコーディングで作れるもの【基礎編】</h2>
+<p>バイブコーディングの実例として、まずは初心者が最初に挑戦しやすい基礎的なアプリ開発から見ていきましょう。これらは学習の土台となる重要な経験になります。</p>
+<h3>1. ToDoリストアプリ｜タスク管理の基本を学ぶ</h3>
+<p><span class="marker">最もポピュラーなバイブコーディング実例</span>がToDoリストアプリです。タスクの追加、削除、完了チェックという基本的なCRUD操作（作成・読取・更新・削除）を学べるため、アプリ開発の入門に最適です。</p>
+<p><strong>ToDoリストで習得できる技術</strong></p>
+<ul class="check-list">
+<ul>
+<li>ユーザー入力の受け取りと処理</li>
+<li>データの保存と表示（LocalStorageやデータベース）</li>
+<li>DOM操作とイベントハンドリング</li>
+<li>状態管理の基本概念</li>
+</ul>
+</ul>
+<p>JavaScriptとHTML/CSSだけで作れるシンプルなものから、ReactやVue.jsといったフレームワークを使った本格的なものまで、段階的にレベルアップできます。</p>
+<p><div class="memo-box"> <p>実際の開発では、まず紙にUIデザインを描いてから、必要な機能をリストアップするとスムーズに進められます。</p> </div></p>
+<h3>2. 計算機アプリ｜ロジック構築の練習に最適</h3>
+<p>電卓アプリは、数値計算のロジックを実装することで<strong>プログラミングの基本的な思考力</strong>を鍛えられる実例です。四則演算から始めて、関数電卓のような高度な機能まで拡張できます。</p>
+<p>この作品を通じて、イベント処理、条件分岐、数値の扱い方など、あらゆるアプリ開発に必要な基礎スキルが身につきます。見た目もわかりやすく、完成した時の達成感も大きいのが特徴です。</p>
+<h3>3. タイマー・ストップウォッチアプリ｜時間処理を理解する</h3>
+<p>時間を扱うアプリケーションは、JavaScriptの`setInterval`や`setTimeout`といった非同期処理を学ぶのに適した実例です。</p>
+<p><strong>制作のポイント</strong></p>
+<ol class="step-list">
+<ul>
+<li>基本的なカウントアップ・カウントダウン機能を実装</li>
+<li>一時停止・リセット機能を追加</li>
+<li>通知音やアラート機能で実用性を高める</li>
+<li>デザインを工夫してユーザビリティを向上</li>
+</ul>
+</ol>
+<p>ポモドーロテクニック用のタイマーや、インターバルトレーニング用のアプリなど、用途を特化させることで、より実用的な作品に仕上がります。</p>
+<h2>バイブコーディングで作れるもの【Webアプリ編】</h2>
+<p>実用性の高いWebアプリの作成は、バイブコーディングでスキルアップを実感できる重要なステップです。ここからは、より本格的なアプリ開発の実例を見ていきましょう。</p>
+<h3>4. 天気予報アプリ｜API連携の基礎をマスター</h3>
+<p><span class="marker-blue">外部APIとの連携を学ぶ最適な実例</span>が天気予報アプリです。OpenWeatherMapなどの無料APIを使うことで、リアルタイムの気象データを取得して表示できます。</p>
+<p><strong>開発で学べる重要スキル</strong></p>
+<p><div class="point-box"> <p>API連携は現代のアプリ開発で必須のスキルです。天気予報アプリを通じて、HTTP通信、JSON形式のデータ処理、非同期処理（async/await）などの実践的な技術を習得できます。</p> </div></p>
+<p>位置情報の取得、複数都市の登録、週間予報の表示など、機能を段階的に追加していくことで、段階的にスキルアップできます。</p>
+<h3>5. ブログプラットフォーム｜フルスタック開発の実践</h3>
+<p>記事の投稿、編集、削除ができるブログシステムは、<strong>フロントエンドとバックエンドの両方を学べる総合的な実例</strong>です。</p>
+<table class="comparison-table">
+<tr><th>開発領域</th><th>使用技術例</th><th>学習内容</th></tr>
+<tr><td>フロントエンド</td><td>React, Vue.js</td><td class="good">UI/UX設計、コンポーネント設計</td></tr>
+<tr><td>バックエンド</td><td>Node.js, Express</td><td class="good">ルーティング、認証、API設計</td></tr>
+<tr><td>データベース</td><td>MongoDB, PostgreSQL</td><td class="good">データモデリング、クエリ処理</td></tr>
+</table>
+<p>ユーザー認証、マークダウンエディタ、画像アップロード、コメント機能など、実際のWebサービスに必要な要素を網羅的に学べます。</p>
+<h3>6. チャットアプリ｜リアルタイム通信を実装</h3>
+<p>WebSocketやFirebaseを使ったリアルタイムチャットアプリは、<span class="marker-pink">現代的なWebアプリ開発の実例</span>として非常に価値があります。</p>
+<p>メッセージの送受信、オンライン状態の表示、既読機能、グループチャットなど、段階的に機能を追加していくことで、複雑なアプリケーションの設計力が身につきます。Firebase Authenticationを使えば、認証機能も比較的簡単に実装できます。</p>
+<p><div class="warning-box"> <p>リアルタイム通信は初心者には少し難易度が高いため、ToDoリストや天気予報アプリなど基礎的な実例を完成させてから挑戦することをおすすめします。</p> </div></p>
+<h2>バイブコーディングで作れるもの【ゲーム開発編】</h2>
+<p>ゲーム開発は楽しみながらプログラミングスキルを向上させる優れた方法です。バイブコーディングの実例として、初心者から中級者まで挑戦できるゲームを紹介します。</p>
+<h3>7. じゃんけんゲーム｜条件分岐とランダム処理の基本</h3>
+<p>最もシンプルなゲーム開発の実例がじゃんけんゲームです。<strong>乱数生成、条件分岐、スコア管理</strong>といったゲームプログラミングの基本要素がすべて含まれています。</p>
+<ul class="check-list">
+<ul>
+<li>ユーザーの選択を受け取る処理</li>
+<li>コンピューターの手をランダムに決定</li>
+<li>勝敗判定のロジック実装</li>
+<li>スコアの記録と表示</li>
+<li>アニメーション効果で演出を追加</li>
+</ul>
+</ul>
+<p>基本形を完成させた後は、あいこの回数を記録したり、連勝ボーナスを設定したり、様々なバリエーションで拡張できます。</p>
+<h3>8. パズルゲーム（15パズル、マインスイーパー）｜アルゴリズムを学ぶ</h3>
+<p>パズルゲームは、<span class="marker-green">アルゴリズム思考を鍛える実例</span>として優れています。15パズルでは配列操作と移動可能性の判定、マインスイーパーでは再帰処理や隣接セルの探索など、高度なロジックが学べます。</p>
+<p><strong>パズルゲーム開発のメリット</strong></p>
+<p><div class="point-box"> <p>パズルゲームの開発を通じて、2次元配列の操作、深さ優先探索、ゲームの状態管理など、実務でも役立つプログラミング技術を体系的に習得できます。</p> </div></p>
+<p>クリア判定、時間計測、難易度設定などの機能を追加することで、より完成度の高い作品に仕上げられます。</p>
+<h3>9. シューティング・アクションゲーム｜Canvasを使った本格開発</h3>
+<p>HTML5のCanvas APIを使えば、本格的な2Dゲームの開発が可能です。弾の発射、衝突判定、スコアシステム、敵キャラクターのAIなど、<strong>ゲーム開発の実践的なスキル</strong>を総合的に学べます。</p>
+<p>JavaScriptのゲームエンジンであるPhaserやPixi.jsを使うと、さらに効率的に開発を進められます。アニメーション、サウンド、パーティクルエフェクトなどを追加して、プロ並みのゲームに仕上げることも可能です。</p>
+<h2>バイブコーディングで作れるもの【実用ツール編】</h2>
+<p>実際の業務や日常生活で使えるツール開発は、モチベーション維持にも効果的です。最後に、実用的なアプリ開発の実例を紹介します。</p>
+<h3>10. 家計簿・支出管理アプリ｜データ管理の実践</h3>
+<p>収入と支出を記録・分析できる家計簿アプリは、<span class="marker">実用性とスキル習得を両立できる優れた実例</span>です。</p>
+<p><strong>実装する主な機能</strong></p>
+<ol class="step-list">
+<ul>
+<li>収支の入力フォームと一覧表示</li>
+<li>カテゴリー別の集計機能</li>
+<li>グラフやチャートでの可視化（Chart.jsなど）</li>
+<li>月別・年別の比較分析</li>
+<li>予算設定とアラート機能</li>
+</ul>
+</ol>
+<p>データベース設計、集計処理、データの可視化など、業務アプリケーション開発に必要なスキルが総合的に身につきます。PWA（Progressive Web App）として実装すれば、スマートフォンでも快適に使えるアプリになります。</p>
+<p><div class="memo-box"> <p>家計簿アプリは自分で実際に使い続けることで、ユーザー視点でのUI/UX改善の経験が積めます。実用性の高さがモチベーション維持にもつながります。</p> </div></p>
+<h2>バイブコーディング実例を成功させる5つのコツ</h2>
+<p>バイブコーディングでアプリ開発を成功させるためには、いくつかの重要なポイントがあります。ここでは実践的なコツを紹介します。</p>
+<h3>まずは完璧を目指さず動くものを作る</h3>
+<p><div class="point-box"> <p>最初から完璧なコードを書こうとせず、まずは基本機能が動作する最小限の実装（MVP：Minimum Viable Product）を目指しましょう。その後、段階的に機能を追加・改善していくアプローチが効果的です。</p> </div></p>
+<p><strong>優先順位の付け方</strong></p>
+<ul>
+<li>コア機能を最初に実装</li>
+<li>デザインや細かい調整は後回し</li>
+<li>動作確認をこまめに行う</li>
+<li>リファクタリングは機能実装後に</li>
+</ul>
+<h3>小さな成功体験を積み重ねる</h3>
+<p>ToDoリストのような簡単な実例から始めて、徐々に難易度を上げていくことで、挫折せずにスキルアップできます。各プロジェクトで新しい技術を1つか2つ取り入れることを目標にすると、無理なく成長できます。</p>
+<h3>コードを読み、真似し、改善する</h3>
+<p>他の開発者が公開しているコードを読むことは、<strong>非常に効果的な学習方法</strong>です。GitHubで優れた実例を探し、コードを理解しながら自分なりのアレンジを加えてみましょう。</p>
+<ul class="check-list">
+<ul>
+<li>GitHubでスター数の多いプロジェクトを探す</li>
+<li>コードを一行ずつ読んで理解する</li>
+<li>動作を確認しながら改造してみる</li>
+<li>オリジナルの機能を追加する</li>
+<li>自分のポートフォリオとして公開する</li>
+</ul>
+</ul>
+<h3>エラーを恐れず、デバッグ力を磨く</h3>
+<p><span class="marker-pink">エラーはスキルアップのチャンス</span>です。エラーメッセージを正しく読み、原因を特定し、解決する過程で、プログラミングの理解が深まります。</p>
+<p>Chrome DevToolsやVisual Studio Codeのデバッガーなど、開発ツールの使い方を習得することで、問題解決のスピードが大幅に向上します。</p>
+<h3>ポートフォリオとして公開する</h3>
+<p>完成した作品はGitHub Pagesやnetlifyなどで公開しましょう。実際に動くアプリとして公開することで、<strong>就職活動やフリーランスの案件獲得にも役立ちます</strong>。</p>
+<p><div class="point-box"> <p>作品を公開する際は、README.mdに使用技術、実装した機能、工夫した点などを詳しく記載しましょう。採用担当者や案件依頼者に技術力を効果的にアピールできます。</p> </div></p>
+<h2>作るものに迷ったときの選び方</h2>
+<p>バイブコーディングで何を作るか迷ったときは、以下の視点で選ぶと良いでしょう。</p>
+<h3>学習目的に合わせて選ぶ</h3>
+<p>目的によって最適な実例は変わります。</p>
+<table class="comparison-table">
+<tr><th>学習目的</th><th>おすすめの実例</th><th>習得できるスキル</th></tr>
+<tr><td>プログラミング基礎</td><td>ToDoリスト、計算機</td><td class="good">基本文法、DOM操作</td></tr>
+<tr><td>API連携を学ぶ</td><td>天気予報、ニュースアプリ</td><td class="good">HTTP通信、JSON処理</td></tr>
+<tr><td>ゲーム開発</td><td>パズル、シューティング</td><td class="good">Canvas、アニメーション</td></tr>
+<tr><td>フルスタック開発</td><td>ブログ、チャットアプリ</td><td class="good">認証、データベース、API設計</td></tr>
+</table>
+<h3>自分が実際に使いたいものを作る</h3>
+<p><span class="marker-blue">実用性の高いアプリは開発のモチベーションが続きやすい</span>という大きなメリットがあります。日常生活や仕事で「こんなツールがあったら便利なのに」と感じているものを作ってみましょう。</p>
+<p>自分で使い続けることで、ユーザー視点でのUI/UX改善や機能追加の経験が積めます。</p>
+<h3>現在の技術レベルより少し難しいものを選ぶ</h3>
+<p>簡単すぎる実例では成長が見込めず、難しすぎると挫折します。<strong>現在のスキルより10〜20%難しい程度</strong>のプロジェクトを選ぶことで、適度な挑戦感を維持できます。</p>
+<p><div class="warning-box"> <p>最初から大規模なSNSやECサイトなど、複雑すぎるプロジェクトに挑戦すると挫折しやすくなります。まずは小規模な実例から始め、段階的にスケールアップしていきましょう。</p> </div></p>
+<h2>開発環境とツールの準備</h2>
+<p>バイブコーディングを始める前に、適切な開発環境を整えることが重要です。</p>
+<h3>基本的な開発環境</h3>
+<ul class="check-list">
+<ul>
+<li>テキストエディタ（Visual Studio Code推奨）</li>
+<li>Webブラウザ（Chrome推奨、DevToolsが充実）</li>
+<li>Node.jsとnpm（JavaScriptアプリ開発に必須）</li>
+<li>Gitとgitコマンド（バージョン管理）</li>
+<li>GitHubアカウント（コード管理とポートフォリオ公開）</li>
+</ul>
+</ul>
+<h3>おすすめの拡張機能</h3>
+<p>Visual Studio Codeには、開発効率を上げる便利な拡張機能が多数あります。</p>
+<p><strong>必須の拡張機能</strong></p>
+<ul>
+<li><strong>Live Server</strong>: HTMLファイルをリアルタイムプレビュー</li>
+<li><strong>Prettier</strong>: コードの自動フォーマット</li>
+<li><strong>ESLint</strong>: JavaScriptのエラーチェック</li>
+<li><strong>Auto Rename Tag</strong>: HTMLタグの自動リネーム</li>
+<li><strong>Bracket Pair Colorizer</strong>: 括弧のペアを色分け</li>
+</ul>
+<p><div class="memo-box"> <p>開発環境の設定に時間をかけすぎないことも重要です。基本的な環境が整ったら、実際にコードを書きながら必要に応じてツールを追加していきましょう。</p> </div></p>
+<h2>よくある質問</h2>
+<p><div class="qa-box"> <div class="qa-question"> <span class="qa-label">Q</span> <span class="qa-text">バイブコーディングでアプリを作るのにどれくらい時間がかかりますか？</span> </div> <div class="qa-answer"> <span class="qa-label">A</span> <span class="qa-text">作るものの複雑さと経験値によって大きく異なります。ToDoリストなら1〜3日、天気予報アプリなら3〜7日、ブログシステムなら2〜4週間が目安です。重要なのは完成度よりも「動くものを作る」経験を積むことです。最初は時間がかかっても、2つ目、3つ目と作るうちに大幅にスピードアップします。</span> </div> </div></p>
+<p><div class="qa-box"> <div class="qa-question"> <span class="qa-label">Q</span> <span class="qa-text">プログラミング初心者でも本当にアプリが作れますか？</span> </div> <div class="qa-answer"> <span class="qa-label">A</span> <span class="qa-text">はい、作れます。HTMLとCSSの基礎、JavaScriptの変数・関数・条件分岐・ループが理解できていれば、ToDoリストや計算機といったシンプルなアプリは十分に作成可能です。まずは小さな成功体験を積み重ね、徐々に複雑なアプリに挑戦していくアプローチが効果的です。オンラインチュートリアルを参考にしながら、実際に手を動かすことが上達の近道です。</span> </div> </div></p>
+<p><div class="qa-box"> <div class="qa-question"> <span class="qa-label">Q</span> <span class="qa-text">バイブコーディングの実例を作る際、有料のツールやサービスは必要ですか？</span> </div> <div class="qa-answer"> <span class="qa-label">A</span> <span class="qa-text">基本的に無料のツールだけで十分です。Visual Studio Code、Git、Node.js、GitHubは全て無料で使えます。API連携もOpenWeatherMapなど無料プランで学習できるものが多数あります。デプロイもGitHub PagesやNetlifyの無料プランで可能です。有料ツールは必要に応じて後から検討すれば良いでしょう。</span> </div> </div></p>
+<p><div class="qa-box"> <div class="qa-question"> <span class="qa-label">Q</span> <span class="qa-text">作った作品を就職活動のポートフォリオとして使えますか？</span> </div> <div class="qa-answer"> <span class="qa-label">A</span> <span class="qa-text">はい、十分に活用できます。特に実際に動作するアプリをデプロイし、GitHubでコードを公開している場合、技術力を証明する強力な材料になります。READMEに使用技術、実装した機能、工夫した点を詳しく記載しましょう。オリジナリティのある機能追加や、きれいなコード、適切なコメントなどが評価されます。複数のプロジェクトを公開することで、継続的な学習姿勢もアピールできます。</span> </div> </div></p>
+<h2>まとめ：バイブコーディングで実践力を身につけよう</h2>
+<p>この記事では、<span class="marker">バイブコーディングで作れるもの10選</span>を、基礎編からWebアプリ、ゲーム、実用ツールまで幅広く紹介しました。</p>
+<p><div class="point-box"> <p><strong>バイブコーディング実例のポイント</strong><br> • 基礎編：ToDoリスト、計算機、タイマーで基本を習得<br> • Webアプリ編：天気予報、ブログ、チャットで実践的なスキルを学習<br> • ゲーム編：じゃんけん、パズル、シューティングで楽しみながら成長<br> • 実用ツール編：家計簿など日常で使えるアプリで継続的な改善経験を積む</p> </div></p>
+<p>プログラミングスキルは、実際に手を動かして作品を完成させることで確実に向上します。この記事で紹介した実例から、あなたの興味や目的に合ったものを選んで、今日からアプリ開発に挑戦してみましょう。</p>
+<p><span class="badge badge-primary">次のステップ</span> まずは最もシンプルなToDoリストから始めて、1週間以内に動くものを完成させることを目標にしてみてください。完璧を目指さず、とにかく動くものを作る経験が、あなたのプログラミングスキルを大きく成長させます。</p>
+<p>作品が完成したらGitHubで公開し、次のプロジェクトに進みましょう。小さな成功体験の積み重ねが、プロの開発者への確実な道筋となります。</p>
+
+      <div class="share-buttons">
+        <a href="https://twitter.com/intent/tweet?text=%E3%83%90%E3%82%A4%E3%83%96%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%81%A7%E4%BD%9C%E3%82%8C%E3%82%8B%E3%82%82%E3%81%AE10%E9%81%B8%EF%BD%9CWeb%E3%82%A2%E3%83%97%E3%83%AA%E3%81%8B%E3%82%89%E3%82%B2%E3%83%BC%E3%83%A0%E3%81%BE%E3%81%A7%E5%AE%9F%E4%BE%8B%E7%B4%B9%E4%BB%8B&url=" class="share-btn twitter" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          Post
+        </a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=" class="share-btn facebook" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          Share
+        </a>
+        <a href="https://line.me/R/msg/text/?%E3%83%90%E3%82%A4%E3%83%96%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%81%A7%E4%BD%9C%E3%82%8C%E3%82%8B%E3%82%82%E3%81%AE10%E9%81%B8%EF%BD%9CWeb%E3%82%A2%E3%83%97%E3%83%AA%E3%81%8B%E3%82%89%E3%82%B2%E3%83%BC%E3%83%A0%E3%81%BE%E3%81%A7%E5%AE%9F%E4%BE%8B%E7%B4%B9%E4%BB%8B%0D%0A" class="share-btn line" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+          LINE
+        </a>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="container">
+      <!-- カスタムフッター（GitHubリポジトリから取得） -->
+      <footer class="site-footer footer-detailed">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <h4>TECHSTAR</h4>
+        <p>主にAI×開発関係に役立つ情報発信をしていきます。合同会社リバイラルの運営メディアです。</p>
+      </div>
+      <div class="footer-links">
+        <h4>Links</h4>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/posts">Articles</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="mailto:info@revirall.jp">Contact</a></li>
+        </ul>
+      </div>
+      
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 合同会社リバイラル All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="ページトップへ戻る">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <script>
+    // Reading Progress Bar
+    window.addEventListener('scroll', () => {
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      document.getElementById('progressBar').style.width = scrolled + '%';
+
+      // Back to Top Button
+      const backToTop = document.getElementById('backToTop');
+      if (winScroll > 300) {
+        backToTop.classList.add('visible');
+      } else {
+        backToTop.classList.remove('visible');
+      }
+    });
+
+    // Back to Top Click
+    document.getElementById('backToTop').addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+
+    // カスタムスクリプト（GitHubリポジトリから取得）
+    // ========================================
+// SEO-mate Lite - Main JavaScript
+// ========================================
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Reading Progress Bar
+  const progressBar = document.querySelector('.progress-bar');
+  if (progressBar) {
+    window.addEventListener('scroll', function() {
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      progressBar.style.width = scrolled + '%';
+    });
+  }
+
+  // Back to Top Button
+  const backToTop = document.querySelector('.back-to-top');
+  if (backToTop) {
+    window.addEventListener('scroll', function() {
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      if (winScroll > 300) {
+        backToTop.classList.add('visible');
+      } else {
+        backToTop.classList.remove('visible');
+      }
+    });
+
+    backToTop.addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+
+  // Mobile Navigation Toggle
+  const navToggle = document.querySelector('.nav-toggle');
+  const siteNav = document.querySelector('.site-nav');
+  if (navToggle && siteNav) {
+    navToggle.addEventListener('click', function() {
+      siteNav.classList.toggle('active');
+    });
+  }
+});
+
+
+  </script>
+</body>
+</html>
